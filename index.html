@@ -3,9 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skijalište Štedim</title>
+    <title>Skijalište Štedim — Rožaje</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <canvas id="snow"></canvas>
+
+    <nav class="nav">
+        <div class="nav-logo">
+            <svg class="logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 3L5 22H23L14 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M10 22H18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M10.5 14.5 Q14 10 17.5 14.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">Štedim</span>
+        </div>
+        <div class="nav-right">
+            <span class="nav-location">Rožaje &nbsp;·&nbsp; Crna Gora</span>
+        </div>
+    </nav>
+
+    <main class="hero">
+
+        <div class="moonlight"></div>
+
+        <div class="mountains" aria-hidden="true">
+            <svg class="mtn mtn-far" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,520 L0,295 L90,252 L180,275 L270,215 L360,244 L450,192 L540,228 L630,178 L720,218 L810,182 L900,222 L990,188 L1080,228 L1170,198 L1260,232 L1350,202 L1440,238 L1440,520 Z" fill="#1e4e85" opacity="0.45"/>
+            </svg>
+            <svg class="mtn mtn-mid" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#0d2e52"/>
+                        <stop offset="100%" stop-color="#091e38"/>
+                    </linearGradient>
+                </defs>
+                <path d="M0,520 L0,348 L100,285 L200,325 L320,245 L440,300 L560,198 L660,272 L760,182 L860,268 L960,192 L1060,272 L1160,208 L1260,282 L1360,218 L1440,258 L1440,520 Z" fill="url(#g1)"/>
+                <path d="M560,198 L525,232 L595,232 Z" fill="rgba(255,255,255,0.88)"/>
+                <path d="M760,182 L723,220 L797,220 Z" fill="rgba(255,255,255,0.92)"/>
+                <path d="M960,192 L924,230 L996,230 Z" fill="rgba(255,255,255,0.88)"/>
+                <path d="M1160,208 L1125,244 L1195,244 Z" fill="rgba(255,255,255,0.82)"/>
+            </svg>
+            <svg class="mtn mtn-near" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,520 L0,408 L140,362 L280,395 L420,345 L560,388 L700,338 L840,382 L980,332 L1120,378 L1260,342 L1440,368 L1440,520 Z" fill="#06111e" opacity="0.95"/>
+                <path d="M420,345 L394,368 L446,368 Z" fill="rgba(255,255,255,0.65)"/>
+                <path d="M700,338 L673,364 L727,364 Z" fill="rgba(255,255,255,0.65)"/>
+                <path d="M980,332 L952,360 L1008,360 Z" fill="rgba(255,255,255,0.60)"/>
+            </svg>
+            <div class="snow-ground"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Otvaramo Zimu 2026
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-eyebrow">Skijalište</span>
+                <em class="title-name">Štedim</em>
+            </h1>
+
+            <p class="hero-tagline">Rožaje &nbsp;·&nbsp; 2119 m n.v. &nbsp;·&nbsp; Crna Gora</p>
+
+            <p class="hero-desc">
+                Novo iskustvo planinarenja i skijanja na srcu Balkana.<br>
+                Netaknute padine, kristalno čist zrak, savršen snijeg.
+            </p>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">❄</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="count-num" id="days">---</span>
+                    <span class="count-label">Dana</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-item">
+                    <span class="count-num" id="hours">--</span>
+                    <span class="count-label">Sati</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-item">
+                    <span class="count-num" id="minutes">--</span>
+                    <span class="count-label">Minuta</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-item">
+                    <span class="count-num" id="seconds">--</span>
+                    <span class="count-label">Sekundi</span>
+                </div>
+            </div>
+
+
+            <p class="signup-note">Budite prvi koji saznaju kada otvaramo sezonu.</p>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <span>© 2026 Skijalište Štedim</span>
+        <span class="dot">·</span>
+        <span>Rožaje, Crna Gora</span>
+        <span class="dot">·</span>
+        <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
