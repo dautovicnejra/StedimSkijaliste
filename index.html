@@ -14,17 +14,15 @@
     <canvas id="snow"></canvas>
 
     <nav class="nav">
-        <div class="nav-logo">
-            <svg class="logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 3L5 22H23L14 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-                <path d="M10 22H18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M10.5 14.5 Q14 10 17.5 14.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-            </svg>
+        <a href="index.html" class="nav-logo">
+            <img src="multimedija/Rozaje-grb.png" alt="Grb Rožaja" class="logo-icon">
             <span class="logo-text">Štedim</span>
-        </div>
-        <div class="nav-right">
-            <span class="nav-location">Rožaje &nbsp;·&nbsp; Crna Gora</span>
-        </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="galerija.html">Galerija</a></li>
+            <li><a href="kako-doci.html">Kako doći</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
     </nav>
 
     <main class="hero">
@@ -107,7 +105,78 @@
             <p class="signup-note">Budite prvi koji saznaju kada otvaramo sezonu.</p>
         </div>
 
+        <a href="#info" class="hero-scroll">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+            Saznaj više
+        </a>
+
     </main>
+
+    <section class="info-section" id="info">
+        <div class="info-inner">
+            <p class="info-eyebrow">O Štedimu</p>
+            <h2 class="info-title">Planinska sloboda na srcu Balkana</h2>
+            <p class="info-lead">
+                Skijalište Štedim smješteno je na obroncima planine Hajla u blizini Rožaja, jednog od
+                najatraktivnijih planinskih predjela Crne Gore. Sa vrhovima koji dosežu 2119 metara
+                nadmorske visine, ovo područje pruža idealne uvjete za zimski turizam i sportske aktivnosti
+                tokom cijele sezone.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-stat">
+                        <span class="feature-num">2119</span>
+                        <span class="feature-unit">m n.v.</span>
+                    </div>
+                    <p class="feature-label">Nadmorska visina</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-stat">
+                        <span class="feature-num">15+</span>
+                        <span class="feature-unit">km</span>
+                    </div>
+                    <p class="feature-label">Skijaških staza</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-stat">
+                        <span class="feature-num">Dec</span>
+                        <span class="feature-unit">— Apr</span>
+                    </div>
+                    <p class="feature-label">Skijaška sezona</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-stat">
+                        <span class="feature-num">3</span>
+                        <span class="feature-unit">ski-lifta</span>
+                    </div>
+                    <p class="feature-label">Moderna infrastruktura</p>
+                </div>
+            </div>
+
+            <div class="info-body">
+                <div class="info-col">
+                    <h3 class="info-col-title">Priroda i teren</h3>
+                    <p>
+                        Dugačke staze okružene borovima i smrčama, čisti planinski zrak i netaknuta priroda
+                        Prokletija čine Štedim savršenim odredištem za skijaše svih nivoa znanja. Padine su
+                        prilagođene i rekreativcima i naprednim skijaše koji traže izazov.
+                    </p>
+                </div>
+                <div class="info-col">
+                    <h3 class="info-col-title">Vizija i budućnost</h3>
+                    <p>
+                        Rožaje, sa dugom tradicijom planinarenja i ljubavi prema planini, dobija skijašku
+                        infrastrukturu koja odgovara evropskim standardima. Štedim nije samo skijalište —
+                        to je novi centar zimskog turizma koji će spojiti autentičnost balkanske planine
+                        s modernim sadržajima.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <span>© 2026 Skijalište Štedim</span>

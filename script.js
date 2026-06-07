@@ -60,14 +60,15 @@ function draw() {
 resize(); initStars(); initFlakes(); draw();
 window.addEventListener('resize', () => { resize(); initStars(); initFlakes(); });
 
-// ── Countdown to 15 December 2026 ─────────────────────────
+// ── Countdown ─────────────────────────────────────────────
+const countdownEl = document.getElementById('countdown');
 const TARGET = new Date('2026-12-15T09:00:00');
 
 function tick() {
+    if (!countdownEl) return;
     const diff = TARGET - new Date();
     if (diff <= 0) {
-        document.getElementById('countdown').innerHTML =
-            '<p class="countdown-done">Dobrodošli na Štedim!</p>';
+        countdownEl.innerHTML = '<p class="countdown-done">Dobrodošli na Štedim!</p>';
         return;
     }
     const d = Math.floor(diff / 86400000);
@@ -80,10 +81,9 @@ function tick() {
     document.getElementById('seconds').textContent = String(s).padStart(2, '0');
 }
 
-tick();
-setInterval(tick, 1000);
+if (countdownEl) { tick(); setInterval(tick, 1000); }
 
-// ── Email form ─────────────────────────────────────────────
+// ── Email / signup form ────────────────────────────────────
 document.getElementById('signup-form')?.addEventListener('submit', e => {
     e.preventDefault();
     const btn = e.target.querySelector('.signup-btn');
@@ -97,11 +97,37 @@ document.getElementById('signup-form')?.addEventListener('submit', e => {
     }, 3500);
 });
 
-// ── Mouse parallax on mountains ────────────────────────────
-document.addEventListener('mousemove', e => {
-    const rx = (e.clientX / window.innerWidth  - 0.5) * 2;
-    const ry = (e.clientY / window.innerHeight - 0.5) * 2;
-    document.querySelector('.mtn-far').style.transform  = `translate(${rx * -7}px,${ry * -3}px)`;
-    document.querySelector('.mtn-mid').style.transform  = `translate(${rx * -15}px,${ry * -6}px)`;
-    document.querySelector('.mtn-near').style.transform = `translate(${rx * -24}px,${ry * -9}px)`;
+// ── Contact form ───────────────────────────────────────────
+document.getElementById('contact-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-primary');
+    const orig = btn.textContent;
+    btn.textContent = 'Poruka poslana ✓';
+    btn.style.background = '#4caf82';
+    e.target.reset();
+    setTimeout(() => {
+        btn.textContent = orig;
+        btn.style.background = '';
+    }, 3500);
 });
+
+// ── Nav: dark background on scroll ────────────────────────
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── Mouse parallax on mountains (homepage only) ────────────
+const mtnFar  = document.querySelector('.mtn-far');
+const mtnMid  = document.querySelector('.mtn-mid');
+const mtnNear = document.querySelector('.mtn-near');
+
+if (mtnFar) {
+    document.addEventListener('mousemove', e => {
+        const rx = (e.clientX / window.innerWidth  - 0.5) * 2;
+        const ry = (e.clientY / window.innerHeight - 0.5) * 2;
+        mtnFar.style.transform  = `translate(${rx * -7}px,${ry * -3}px)`;
+        mtnMid.style.transform  = `translate(${rx * -15}px,${ry * -6}px)`;
+        mtnNear.style.transform = `translate(${rx * -24}px,${ry * -9}px)`;
+    });
+}

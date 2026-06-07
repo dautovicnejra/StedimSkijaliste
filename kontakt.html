@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt — Skijalište Štedim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="snow"></canvas>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="multimedija/Rozaje-grb.png" alt="Grb Rožaja" class="logo-icon">
+            <span class="logo-text">Štedim</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="galerija.html">Galerija</a></li>
+            <li><a href="kako-doci.html">Kako doći</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <p class="page-header-eyebrow">Skijalište Štedim</p>
+            <h1 class="page-header-title">Kontakt</h1>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="page-wrap">
+
+            <div class="card-grid card-grid--2">
+
+                <!-- Kontakt informacije -->
+                <div class="card">
+                    <p class="card-eyebrow">Informacije</p>
+                    <h2 class="card-title">Stupite u kontakt</h2>
+                    <p class="card-text" style="margin-bottom: 32px;">
+                        Imate pitanja o skijalištu, otvaranju sezone ili ulagačkim
+                        mogućnostima? Slobodno nam se obratite — odgovaramo u roku od 24 sata.
+                    </p>
+
+                    <ul class="contact-info-list">
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-info-label">Adresa</p>
+                                <p class="contact-info-value">Hajla, Rožaje<br>84310 Rožaje, Crna Gora</p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-info-label">Email</p>
+                                <p class="contact-info-value">
+                                    <a href="mailto:info@stedim.me">info@stedim.me</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-info-label">Telefon</p>
+                                <p class="contact-info-value">
+                                    <a href="tel:+38269000000">+382 69 000 000</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-info-label">Radno vrijeme</p>
+                                <p class="contact-info-value">
+                                    Pon – Pet: 09:00 – 17:00<br>
+                                    Vikend: prema dogovoru
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Forma -->
+                <div class="card">
+                    <p class="card-eyebrow">Poruka</p>
+                    <h2 class="card-title">Pošaljite upit</h2>
+
+                    <form id="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="ime">Ime i prezime</label>
+                                <input class="form-input" type="text" id="ime" name="ime" placeholder="Vaše ime" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email adresa</label>
+                                <input class="form-input" type="email" id="email" name="email" placeholder="vas@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="telefon">Telefon</label>
+                                <input class="form-input" type="tel" id="telefon" name="telefon" placeholder="+387 ...">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="tema">Tema</label>
+                                <input class="form-input" type="text" id="tema" name="tema" placeholder="npr. Informacije o sezoni">
+                            </div>
+                            <div class="form-group form-group--full">
+                                <label class="form-label" for="poruka">Poruka</label>
+                                <textarea class="form-textarea" id="poruka" name="poruka" placeholder="Napišite svoju poruku ovdje..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Pošalji poruku</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>© 2026 Skijalište Štedim</span>
+        <span class="dot">·</span>
+        <span>Rožaje, Crna Gora</span>
+        <span class="dot">·</span>
+        <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
