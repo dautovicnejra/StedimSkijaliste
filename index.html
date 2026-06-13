@@ -1,192 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skijalište Štedim — Rožaje</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <canvas id="snow"></canvas>
 
     <nav class="nav">
-        <a href="index.html" class="nav-logo">
-            <img src="multimedija/Rozaje-grb.png" alt="Grb Rožaja" class="logo-icon">
-            <span class="logo-text">Štedim</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="galerija.html">Galerija</a></li>
-            <li><a href="kako-doci.html">Kako doći</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
+      <a href="index.html" class="nav-logo">
+        <img
+          src="multimedija/Rozaje-grb.png"
+          alt="Grb Rožaja"
+          class="logo-icon"
+        />
+        <span class="logo-text">Štedim</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="galerija.html">Galerija</a></li>
+        <li><a href="kako-doci.html">Kako doći</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
     </nav>
 
     <main class="hero">
-
-        <div class="moonlight"></div>
-
-        <div class="mountains" aria-hidden="true">
-            <svg class="mtn mtn-far" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,520 L0,295 L90,252 L180,275 L270,215 L360,244 L450,192 L540,228 L630,178 L720,218 L810,182 L900,222 L990,188 L1080,228 L1170,198 L1260,232 L1350,202 L1440,238 L1440,520 Z" fill="#1e4e85" opacity="0.45"/>
-            </svg>
-            <svg class="mtn mtn-mid" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#0d2e52"/>
-                        <stop offset="100%" stop-color="#091e38"/>
-                    </linearGradient>
-                </defs>
-                <path d="M0,520 L0,348 L100,285 L200,325 L320,245 L440,300 L560,198 L660,272 L760,182 L860,268 L960,192 L1060,272 L1160,208 L1260,282 L1360,218 L1440,258 L1440,520 Z" fill="url(#g1)"/>
-                <path d="M560,198 L525,232 L595,232 Z" fill="rgba(255,255,255,0.88)"/>
-                <path d="M760,182 L723,220 L797,220 Z" fill="rgba(255,255,255,0.92)"/>
-                <path d="M960,192 L924,230 L996,230 Z" fill="rgba(255,255,255,0.88)"/>
-                <path d="M1160,208 L1125,244 L1195,244 Z" fill="rgba(255,255,255,0.82)"/>
-            </svg>
-            <svg class="mtn mtn-near" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,520 L0,408 L140,362 L280,395 L420,345 L560,388 L700,338 L840,382 L980,332 L1120,378 L1260,342 L1440,368 L1440,520 Z" fill="#06111e" opacity="0.95"/>
-                <path d="M420,345 L394,368 L446,368 Z" fill="rgba(255,255,255,0.65)"/>
-                <path d="M700,338 L673,364 L727,364 Z" fill="rgba(255,255,255,0.65)"/>
-                <path d="M980,332 L952,360 L1008,360 Z" fill="rgba(255,255,255,0.60)"/>
-            </svg>
-            <div class="snow-ground"></div>
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Otvaramo Zimu 2026
         </div>
 
-        <div class="hero-content">
-            <div class="badge">
-                <span class="badge-dot"></span>
-                Otvaramo Zimu 2026
-            </div>
+        <h1 class="hero-title">
+          <span class="title-eyebrow">Skijalište</span>
+          <em class="title-name">Štedim</em>
+        </h1>
 
-            <h1 class="hero-title">
-                <span class="title-eyebrow">Skijalište</span>
-                <em class="title-name">Štedim</em>
-            </h1>
+        <p class="hero-tagline">
+          Rožaje &nbsp;·&nbsp; 2119 m n.v. &nbsp;·&nbsp; Crna Gora
+        </p>
 
-            <p class="hero-tagline">Rožaje &nbsp;·&nbsp; 2119 m n.v. &nbsp;·&nbsp; Crna Gora</p>
+        <p class="hero-desc">
+          Novo iskustvo planinarenja i skijanja na srcu Balkana.<br />
+          Netaknute padine, kristalno čist zrak, savršen snijeg.
+        </p>
+      </div>
 
-            <p class="hero-desc">
-                Novo iskustvo planinarenja i skijanja na srcu Balkana.<br>
-                Netaknute padine, kristalno čist zrak, savršen snijeg.
-            </p>
+      <img
+        src="multimedija/hajlaflip.png"
+        alt="Skijaši na Hajli"
+        class="hero-photo-img"
+      />
 
-            <div class="divider">
-                <span class="divider-line"></span>
-                <span class="divider-icon">❄</span>
-                <span class="divider-line"></span>
-            </div>
-
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <span class="count-num" id="days">---</span>
-                    <span class="count-label">Dana</span>
-                </div>
-                <span class="countdown-sep">:</span>
-                <div class="countdown-item">
-                    <span class="count-num" id="hours">--</span>
-                    <span class="count-label">Sati</span>
-                </div>
-                <span class="countdown-sep">:</span>
-                <div class="countdown-item">
-                    <span class="count-num" id="minutes">--</span>
-                    <span class="count-label">Minuta</span>
-                </div>
-                <span class="countdown-sep">:</span>
-                <div class="countdown-item">
-                    <span class="count-num" id="seconds">--</span>
-                    <span class="count-label">Sekundi</span>
-                </div>
-            </div>
-
-
-            <p class="signup-note">Budite prvi koji saznaju kada otvaramo sezonu.</p>
-        </div>
-
-        <a href="#info" class="hero-scroll">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M6 9l6 6 6-6"/>
-            </svg>
-            Saznaj više
-        </a>
-
+      <a href="#info" class="hero-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+        Saznaj više
+      </a>
     </main>
 
     <section class="info-section" id="info">
-        <div class="info-inner">
-            <p class="info-eyebrow">O Štedimu</p>
-            <h2 class="info-title">Planinska sloboda na srcu Balkana</h2>
-            <p class="info-lead">
-                Skijalište Štedim smješteno je na obroncima planine Hajla u blizini Rožaja, jednog od
-                najatraktivnijih planinskih predjela Crne Gore. Sa vrhovima koji dosežu 2119 metara
-                nadmorske visine, ovo područje pruža idealne uvjete za zimski turizam i sportske aktivnosti
-                tokom cijele sezone.
-            </p>
+      <div class="info-inner">
+        <p class="info-eyebrow">O Štedimu</p>
+        <h2 class="info-title">Planinska sloboda na srcu Balkana</h2>
+        <p class="info-lead">
+          Skijalište Štedim smješteno je na obroncima planine Hajla u blizini
+          Rožaja, jednog od najatraktivnijih planinskih predjela Crne Gore. Sa
+          vrhovima koji dosežu 2119 metara nadmorske visine, ovo područje pruža
+          idealne uvjete za zimski turizam i sportske aktivnosti tokom cijele
+          sezone.
+        </p>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-stat">
-                        <span class="feature-num">2119</span>
-                        <span class="feature-unit">m n.v.</span>
-                    </div>
-                    <p class="feature-label">Nadmorska visina</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-stat">
-                        <span class="feature-num">15+</span>
-                        <span class="feature-unit">km</span>
-                    </div>
-                    <p class="feature-label">Skijaških staza</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-stat">
-                        <span class="feature-num">Dec</span>
-                        <span class="feature-unit">— Apr</span>
-                    </div>
-                    <p class="feature-label">Skijaška sezona</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-stat">
-                        <span class="feature-num">3</span>
-                        <span class="feature-unit">ski-lifta</span>
-                    </div>
-                    <p class="feature-label">Moderna infrastruktura</p>
-                </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-stat">
+              <span class="feature-num">2119</span>
+              <span class="feature-unit">m n.v.</span>
             </div>
-
-            <div class="info-body">
-                <div class="info-col">
-                    <h3 class="info-col-title">Priroda i teren</h3>
-                    <p>
-                        Dugačke staze okružene borovima i smrčama, čisti planinski zrak i netaknuta priroda
-                        Prokletija čine Štedim savršenim odredištem za skijaše svih nivoa znanja. Padine su
-                        prilagođene i rekreativcima i naprednim skijaše koji traže izazov.
-                    </p>
-                </div>
-                <div class="info-col">
-                    <h3 class="info-col-title">Vizija i budućnost</h3>
-                    <p>
-                        Rožaje, sa dugom tradicijom planinarenja i ljubavi prema planini, dobija skijašku
-                        infrastrukturu koja odgovara evropskim standardima. Štedim nije samo skijalište —
-                        to je novi centar zimskog turizma koji će spojiti autentičnost balkanske planine
-                        s modernim sadržajima.
-                    </p>
-                </div>
+            <p class="feature-label">Nadmorska visina</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-stat">
+              <span class="feature-num">15+</span>
+              <span class="feature-unit">km</span>
             </div>
+            <p class="feature-label">Skijaških staza</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-stat">
+              <span class="feature-num">Dec</span>
+              <span class="feature-unit">— Apr</span>
+            </div>
+            <p class="feature-label">Skijaška sezona</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-stat">
+              <span class="feature-num">3</span>
+              <span class="feature-unit">ski-lifta</span>
+            </div>
+            <p class="feature-label">Moderna infrastruktura</p>
+          </div>
         </div>
+
+        <div class="info-body">
+          <div class="info-col">
+            <h3 class="info-col-title">Priroda i teren</h3>
+            <p>
+              Dugačke staze okružene borovima i smrčama, čisti planinski zrak i
+              netaknuta priroda Prokletija čine Štedim savršenim odredištem za
+              skijaše svih nivoa znanja. Padine su prilagođene i rekreativcima i
+              naprednim skijaše koji traže izazov.
+            </p>
+          </div>
+          <div class="info-col">
+            <h3 class="info-col-title">Vizija i budućnost</h3>
+            <p>
+              Rožaje, sa dugom tradicijom planinarenja i ljubavi prema planini,
+              dobija skijašku infrastrukturu koja odgovara evropskim
+              standardima. Štedim nije samo skijalište — to je novi centar
+              zimskog turizma koji će spojiti autentičnost balkanske planine s
+              modernim sadržajima.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USLOVI NA PLANINI -->
+    <section class="conditions-section" id="uslovi">
+      <div class="section-inner">
+        <p class="eyebrow-light">Planinska stanica · Hajla 2119 m n.v.</p>
+        <h2 class="section-title-light">Uslovi na planini</h2>
+        <p class="section-lead-light">
+          Podaci o vremenu u realnom vremenu sa lokacije Hajla, Rožaje.
+        </p>
+
+        <div class="conditions-grid">
+          <div class="cond-main-card">
+            <div class="cond-weather-top">
+              <span class="cond-icon" id="cond-icon">❄</span>
+              <div class="cond-temp-block">
+                <span class="cond-temp" id="cond-temp">--</span>
+                <span class="cond-temp-unit">°C</span>
+              </div>
+            </div>
+            <p class="cond-desc" id="cond-desc">Učitavanje podataka...</p>
+            <p class="cond-updated">
+              Ažurirano u <span id="cond-time">--:--</span>
+            </p>
+          </div>
+
+          <div class="cond-stats">
+            <div class="cond-stat-card">
+              <svg
+                class="cond-stat-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M3 12h4m14 0h-4M12 3v4m0 14v-4m-6.36-9.64 2.83 2.83m7.06 7.06 2.83 2.83M5.64 17.64l2.83-2.83m7.06-7.06 2.83-2.83"
+                />
+              </svg>
+              <div>
+                <p class="cond-stat-val" id="cond-snow">-- cm</p>
+                <p class="cond-stat-label">Snijeg na terenu</p>
+              </div>
+            </div>
+            <div class="cond-stat-card">
+              <svg
+                class="cond-stat-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+                />
+              </svg>
+              <div>
+                <p class="cond-stat-val" id="cond-wind">-- km/h</p>
+                <p class="cond-stat-label">Brzina vjetra</p>
+              </div>
+            </div>
+            <div class="cond-stat-card">
+              <svg
+                class="cond-stat-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 22V12m0 0V2m0 10 4-4m-4 4-4-4m4 14 4-4m-4 4-4-4" />
+              </svg>
+              <div>
+                <p class="cond-stat-val">2119 m</p>
+                <p class="cond-stat-label">Nadmorska visina</p>
+              </div>
+            </div>
+            <div class="cond-stat-card">
+              <svg
+                class="cond-stat-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+              <div>
+                <p class="cond-stat-val" id="cond-humidity">-- %</p>
+                <p class="cond-stat-label">Vlažnost zraka</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAZE I SKI LIFTOVI -->
+    <section class="slopes-section" id="staze">
+      <div class="section-inner">
+        <p class="info-eyebrow">Na terenu</p>
+        <h2 class="info-title">Staze i ski liftovi</h2>
+        <p class="info-lead">
+          Planirano 15+ km skijaških staza za sve nivoe, od zelenih za početnike
+          do crnih za iskusne skijaše. Infrastruktura se otvara Dec 2026.
+        </p>
+
+        <div class="slopes-lift-grid">
+          <div class="slopes-col">
+            <h3 class="slopes-col-title">Skijaške staze</h3>
+            <div class="slope-list">
+              <div class="slope-row">
+                <span class="slope-dot sd-green"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Hajlina dolina</span>
+                  <span class="slope-meta">2.3 km · 180 m pad</span>
+                </div>
+                <span class="slope-badge sb-green">Zelena</span>
+              </div>
+              <div class="slope-row">
+                <span class="slope-dot sd-green"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Početnik</span>
+                  <span class="slope-meta">1.1 km · 95 m pad</span>
+                </div>
+                <span class="slope-badge sb-green">Zelena</span>
+              </div>
+              <div class="slope-row">
+                <span class="slope-dot sd-blue"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Prokletijska panorama</span>
+                  <span class="slope-meta">3.8 km · 420 m pad</span>
+                </div>
+                <span class="slope-badge sb-blue">Plava</span>
+              </div>
+              <div class="slope-row">
+                <span class="slope-dot sd-blue"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Srednja staza</span>
+                  <span class="slope-meta">2.6 km · 310 m pad</span>
+                </div>
+                <span class="slope-badge sb-blue">Plava</span>
+              </div>
+              <div class="slope-row">
+                <span class="slope-dot sd-red"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Štedimska kruna</span>
+                  <span class="slope-meta">4.2 km · 680 m pad</span>
+                </div>
+                <span class="slope-badge sb-red">Crvena</span>
+              </div>
+              <div class="slope-row">
+                <span class="slope-dot sd-black"></span>
+                <div class="slope-info">
+                  <span class="slope-name">Crni vrh</span>
+                  <span class="slope-meta">1.8 km · 520 m pad</span>
+                </div>
+                <span class="slope-badge sb-black">Crna</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slopes-col">
+            <h3 class="slopes-col-title">Ski liftovi</h3>
+            <div class="lift-list">
+              <div class="lift-card">
+                <div class="lift-header">
+                  <div>
+                    <p class="lift-name">Lift 1 — Osnovna staza</p>
+                    <p class="lift-type">Sidro lift</p>
+                  </div>
+                  <span class="lift-len">800 m</span>
+                </div>
+                <div class="lift-details">
+                  <span>Kapacitet: 600 osoba/h</span>
+                  <span>Visinska razlika: 95 m</span>
+                </div>
+              </div>
+              <div class="lift-card">
+                <div class="lift-header">
+                  <div>
+                    <p class="lift-name">Lift 2 — Panoramski</p>
+                    <p class="lift-type">Četverosjedni žičar</p>
+                  </div>
+                  <span class="lift-len">1.9 km</span>
+                </div>
+                <div class="lift-details">
+                  <span>Kapacitet: 2.400 osoba/h</span>
+                  <span>Visinska razlika: 420 m</span>
+                </div>
+              </div>
+              <div class="lift-card">
+                <div class="lift-header">
+                  <div>
+                    <p class="lift-name">Lift 3 — Vrh Hajle</p>
+                    <p class="lift-type">Gondola</p>
+                  </div>
+                  <span class="lift-len">2.4 km</span>
+                </div>
+                <div class="lift-details">
+                  <span>Kapacitet: 1.200 osoba/h</span>
+                  <span>Visinska razlika: 680 m</span>
+                </div>
+              </div>
+            </div>
+            <p class="slopes-note">
+              * Kapaciteti planirani za sezonu Dec 2026.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIJENE I SKI PASOVI -->
+    <section class="prices-section" id="cijene">
+      <div class="section-inner">
+        <p class="eyebrow-light">Ski pasovi</p>
+        <h2 class="section-title-light">Cijene za sezonu 2026/27</h2>
+        <p class="section-lead-light">
+          Planirane cijene za nadolazeću skijašku sezonu. Konačan cjenovnik biće
+          objavljen pri otvaranju.
+        </p>
+
+        <div class="prices-grid">
+          <div class="price-card">
+            <div class="price-card-head">
+              <svg
+                class="price-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path
+                  d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                />
+              </svg>
+              <div>
+                <p class="price-period">Dnevna karta</p>
+                <p class="price-desc-sm">08:00 – 17:00</p>
+              </div>
+            </div>
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-cat">Odrasli</span
+                ><span class="price-val">25 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Djeca (do 12 god)</span
+                ><span class="price-val">15 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Penzioneri (65+)</span
+                ><span class="price-val">18 €</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-card-head">
+              <svg
+                class="price-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+              <div>
+                <p class="price-period">Polu-dnevna karta</p>
+                <p class="price-desc-sm">Do 13:00 ili od 13:00</p>
+              </div>
+            </div>
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-cat">Odrasli</span
+                ><span class="price-val">16 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Djeca (do 12 god)</span
+                ><span class="price-val">10 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Penzioneri (65+)</span
+                ><span class="price-val">12 €</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-card price-card--featured">
+            <p class="price-featured-label">Najpopularnije</p>
+            <div class="price-card-head">
+              <svg
+                class="price-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              <div>
+                <p class="price-period">Sedmična karta</p>
+                <p class="price-desc-sm">7 uzastopnih dana</p>
+              </div>
+            </div>
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-cat">Odrasli</span
+                ><span class="price-val">140 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Djeca (do 12 god)</span
+                ><span class="price-val">85 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Penzioneri (65+)</span
+                ><span class="price-val">100 €</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-card-head">
+              <svg
+                class="price-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <div>
+                <p class="price-period">Sezonska karta</p>
+                <p class="price-desc-sm">Dec 2026 – Apr 2027</p>
+              </div>
+            </div>
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-cat">Odrasli</span
+                ><span class="price-val">380 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Djeca (do 12 god)</span
+                ><span class="price-val">220 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-cat">Penzioneri (65+)</span
+                ><span class="price-val">270 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="prices-note">
+          * Prikazane cijene su indikativne i mogu se promijeniti. Grupni
+          popusti i paket aranžmani biće dostupni pri otvaranju.
+        </p>
+      </div>
     </section>
 
     <footer class="footer">
-        <span>© 2026 Skijalište Štedim</span>
-        <span class="dot">·</span>
-        <span>Rožaje, Crna Gora</span>
-        <span class="dot">·</span>
-        <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+      <span>© 2026 Skijalište Štedim</span>
+      <span class="dot">·</span>
+      <span>Rožaje, Crna Gora</span>
+      <span class="dot">·</span>
+      <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
     </footer>
 
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>

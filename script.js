@@ -117,6 +117,60 @@ window.addEventListener('scroll', () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > 60);
 }, { passive: true });
 
+// ── Real-time weather (Open-Meteo, no API key) ────────────
+const WMO_LABELS = {
+    0: 'Vedro', 1: 'Pretežno vedro', 2: 'Djelimično oblačno', 3: 'Oblačno',
+    45: 'Magla', 48: 'Ledena magla',
+    51: 'Rosulja', 53: 'Rosulja', 55: 'Jaka rosulja',
+    61: 'Kiša', 63: 'Obilna kiša', 65: 'Jaka kiša',
+    71: 'Snijeg', 73: 'Snijeg', 75: 'Jak snijeg', 77: 'Snježne pahulje',
+    80: 'Pljuskovi', 81: 'Obilni pljuskovi', 82: 'Jaki pljuskovi',
+    85: 'Snježni pljuskovi', 86: 'Jaki snježni pljuskovi',
+    95: 'Grmljavina', 96: 'Grmljavina s gradom', 99: 'Grmljavina s gradom'
+};
+
+const WMO_ICONS = {
+    0: '☀️', 1: '🌤', 2: '⛅', 3: '☁️',
+    45: '🌫', 48: '🌫',
+    51: '🌦', 53: '🌦', 55: '🌧',
+    61: '🌧', 63: '🌧', 65: '🌧',
+    71: '🌨', 73: '❄️', 75: '❄️', 77: '❄️',
+    80: '🌦', 81: '🌧', 82: '🌧',
+    85: '🌨', 86: '❄️',
+    95: '⛈', 96: '⛈', 99: '⛈'
+};
+
+async function loadWeather() {
+    const condIcon = document.getElementById('cond-icon');
+    if (!condIcon) return;
+    try {
+        const url = 'https://api.open-meteo.com/v1/forecast' +
+            '?latitude=42.85&longitude=20.17&elevation=2100' +
+            '&current=temperature_2m,weathercode,windspeed_10m,snow_depth,relative_humidity_2m' +
+            '&timezone=Europe%2FBelgrade';
+        const res  = await fetch(url);
+        const data = await res.json();
+        const c    = data.current;
+
+        const code = c.weathercode;
+        document.getElementById('cond-icon').textContent    = WMO_ICONS[code]  ?? '❄️';
+        document.getElementById('cond-temp').textContent    = Math.round(c.temperature_2m);
+        document.getElementById('cond-desc').textContent    = WMO_LABELS[code] ?? 'Nepoznato';
+        document.getElementById('cond-wind').textContent    = Math.round(c.windspeed_10m) + ' km/h';
+        const snowCm = c.snow_depth != null ? Math.round(c.snow_depth * 100) : null;
+        document.getElementById('cond-snow').textContent    = snowCm != null ? snowCm + ' cm' : 'N/A';
+        document.getElementById('cond-humidity').textContent = Math.round(c.relative_humidity_2m) + ' %';
+
+        const now = new Date();
+        document.getElementById('cond-time').textContent =
+            now.toLocaleTimeString('bs', { hour: '2-digit', minute: '2-digit' });
+    } catch (_) {
+        document.getElementById('cond-desc').textContent = 'Podaci trenutno nedostupni';
+    }
+}
+
+loadWeather();
+
 // ── Mouse parallax on mountains (homepage only) ────────────
 const mtnFar  = document.querySelector('.mtn-far');
 const mtnMid  = document.querySelector('.mtn-mid');
