@@ -301,6 +301,36 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && actModal?.classList.contains('is-open')) closeActivity();
 });
 
+// ── Mobile hamburger menu ─────────────────────────────────
+const hamburger = document.getElementById('nav-hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+function openMobileNav() {
+    hamburger.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('is-open');
+    mobileNav.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+    hamburger.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+hamburger?.addEventListener('click', () => {
+    hamburger.classList.contains('is-open') ? closeMobileNav() : openMobileNav();
+});
+
+mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileNav?.classList.contains('is-open')) closeMobileNav();
+});
+
 // ── Mouse parallax on mountains (homepage only) ────────────
 const mtnFar  = document.querySelector('.mtn-far');
 const mtnMid  = document.querySelector('.mtn-mid');

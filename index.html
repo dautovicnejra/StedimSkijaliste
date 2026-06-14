@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js"></script>
   </head>
   <body>
     <canvas id="snow"></canvas>
@@ -32,7 +33,22 @@
         <li><a href="kako-doci.html">Kako doći</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="galerija.html">Galerija</a></li>
+        <li><a href="oprema.html">Oprema</a></li>
+        <li><a href="smjestaj.html">Smještaj</a></li>
+        <li><a href="kako-doci.html">Kako doći</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
 
     <main class="hero">
       <div class="hero-content">
@@ -629,6 +645,5 @@
       <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
     </footer>
 
-    <script src="script.js"></script>
   </body>
 </html>

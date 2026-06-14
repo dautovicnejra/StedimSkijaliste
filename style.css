@@ -288,7 +288,7 @@ body {
 
 .title-name {
   padding-top: 20px;
-  font-size: 100px;
+  font-size: clamp(56px, 8vw, 100px);
   font-family: "Archivo Black", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -1817,6 +1817,90 @@ body {
   color: var(--ice);
 }
 
+/* ── Hamburger button ─────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 300;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.22s;
+  transform-origin: center;
+}
+
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile navigation overlay ────────────────────────────── */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  background: rgba(4, 13, 26, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-nav ul a {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(28px, 9vw, 44px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  display: block;
+  padding: 12px 28px;
+  text-align: center;
+}
+
+.mobile-nav ul a:hover {
+  color: var(--ice);
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 960px) {
   .features-grid {
@@ -1864,9 +1948,13 @@ body {
     gap: 20px;
   }
 
+  .hero {
+    align-items: flex-start;
+  }
   .hero-content {
-    padding: 0 28px 150px;
+    width: 100%;
     max-width: 100%;
+    padding: 200px 28px 0;
   }
   .info-section {
     padding: 64px 24px 56px;
@@ -1952,10 +2040,16 @@ body {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .nav-links {
     display: none;
   }
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 520px) {
   .gallery-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: 200px;
@@ -1968,6 +2062,12 @@ body {
   }
   .prices-grid {
     grid-template-columns: 1fr;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .slopes-lift-grid {
+    gap: 28px;
   }
 }
 
