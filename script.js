@@ -228,7 +228,7 @@ const ACTIVITIES = {
     planinarenje: {
         title: 'Zimsko planinarenje',
         sub: 'Markirane rute · Vrh Hajla 2119 m',
-        desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.',
+        desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.<br><br>Planinarske ture možete istražiti <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="amd-link">OVDJE</a>.',
         details: [
             ['Vrh Hajla', '2119 m n.v.'],
             ['Trajanje (ukrug)', '2.5 – 4 sata'],
