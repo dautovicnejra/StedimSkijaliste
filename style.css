@@ -759,8 +759,8 @@ body {
 }
 
 .act-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-b);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--radius);
   padding: 28px 24px;
   display: flex;
@@ -778,8 +778,8 @@ body {
 }
 
 .act-card:hover {
-  background: var(--glass-h);
-  border-color: rgba(159, 205, 232, 0.28);
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(159, 205, 232, 0.45);
   transform: translateY(-3px);
 }
 
