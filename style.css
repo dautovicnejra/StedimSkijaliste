@@ -288,7 +288,7 @@ body {
 
 .title-name {
   padding-top: 20px;
-  font-size: clamp(56px, 8vw, 100px);
+  font-size: clamp(70px, 9vw, 150px);
   font-family: "Archivo Black", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -298,7 +298,7 @@ body {
 }
 
 .hero-tagline {
-  font-size: 12.6px;
+  font-size: clamp(10.5px, 1vw, 19px);
   font-weight: bolder;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -308,7 +308,7 @@ body {
 }
 
 .hero-desc {
-  font-size: clamp(13.5px, 1vw, 14.7px);
+  font-size: clamp(13.5px, 1vw, 17.7px);
   font-weight: 550;
   line-height: 1.85;
   color: #5686ce;
@@ -513,19 +513,19 @@ body {
 }
 
 .features-grid .feature-card:nth-child(1) {
-  background-image: url("multimedija/nmv.webp");
+  background-image: url("multimedia/nmv.webp");
 }
 
 .features-grid .feature-card:nth-child(2) {
-  background-image: url("multimedija/staza2.webp");
+  background-image: url("multimedia/staza2.webp");
 }
 
 .features-grid .feature-card:nth-child(3) {
-  background-image: url("multimedija/suma.webp");
+  background-image: url("multimedia/suma.webp");
 }
 
 .features-grid .feature-card:nth-child(4) {
-  background-image: url("multimedija/skilift2.webp");
+  background-image: url("multimedia/skilift2.webp");
 }
 
 .feature-stat {
@@ -747,7 +747,7 @@ body {
       rgba(4, 13, 26, 0.72) 0%,
       rgba(7, 21, 38, 0.78) 100%
     ),
-    url("multimedija/pozadina.webp") center center / cover no-repeat;
+    url("multimedia/pozadina.webp") center center / cover no-repeat;
   width: 100%;
   padding: 96px 48px 80px;
 }
@@ -1857,23 +1857,25 @@ body {
 
 /* ── Mobile navigation overlay ────────────────────────────── */
 .mobile-nav {
+  display: none;
   position: fixed;
   inset: 0;
-  z-index: 180;
+  z-index: 250;
   background: rgba(4, 13, 26, 0.97);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.32s;
 }
 
 .mobile-nav.is-open {
-  opacity: 1;
-  pointer-events: all;
+  display: flex;
+  animation: fadeInMenu 0.25s ease;
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .mobile-nav ul {
@@ -1940,12 +1942,16 @@ body {
 @media (max-width: 768px) {
   .nav {
     padding: 18px 22px;
+    z-index: 300;
   }
   .nav--scrolled {
     padding: 14px 22px;
   }
   .nav-links {
-    gap: 20px;
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
   }
 
   .hero {
@@ -1954,7 +1960,7 @@ body {
   .hero-content {
     width: 100%;
     max-width: 100%;
-    padding: 200px 28px 0;
+    padding: 270px 28px 0;
   }
   .info-section {
     padding: 64px 24px 56px;
@@ -2037,15 +2043,6 @@ body {
   .lift-details {
     flex-direction: column;
     gap: 4px;
-  }
-}
-
-@media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-hamburger {
-    display: flex;
   }
 }
 
