@@ -11,7 +11,7 @@ function resize() {
 function initStars() {
     stars = [];
     for (let i = 0; i < 130; i++) {
-        stars.push({
+        ne .push({
             x: Math.random() * W,
             y: Math.random() * H * 0.58,
             r: Math.random() * 1.1 + 0.15,
