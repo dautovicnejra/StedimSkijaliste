@@ -488,12 +488,45 @@ body {
 }
 
 .feature-card {
-  background: var(--blue);
   border-radius: var(--radius);
   padding: 32px 28px 28px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 13, 26, 0.58);
+  border-radius: inherit;
+}
+
+.feature-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.features-grid .feature-card:nth-child(1) {
+  background-image: url('multimedija/nmv.png');
+}
+
+.features-grid .feature-card:nth-child(2) {
+  background-image: url('multimedija/staza2.png');
+}
+
+.features-grid .feature-card:nth-child(3) {
+  background-image: url('multimedija/suma.png');
+}
+
+.features-grid .feature-card:nth-child(4) {
+  background-image: url('multimedija/skilift2.png');
 }
 
 .feature-stat {
