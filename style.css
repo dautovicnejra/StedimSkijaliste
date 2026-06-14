@@ -288,7 +288,7 @@ body {
 
 .title-name {
   padding-top: 20px;
-  font-size: clamp(70px, 9vw, 130px);
+  font-size: clamp(70px, 8vw, 120px);
   font-family: "Archivo Black", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -298,7 +298,7 @@ body {
 }
 
 .hero-tagline {
-  font-size: clamp(10.5px, 1vw, 16.5px);
+  font-size: clamp(10.5px, 1vw, 15.2px);
   font-weight: bolder;
   letter-spacing: 0.32em;
   text-transform: uppercase;
