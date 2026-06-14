@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400;500&family=Chelsea+Market&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400;500&family=Chelsea+Market&display=swap");
 
 .archivo-black-regular {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 
 /* ── Reset & base ─────────────────────────────────────────── */
 *,
@@ -312,7 +311,7 @@ body {
   font-size: clamp(13.5px, 1vw, 14.7px);
   font-weight: 550;
   line-height: 1.85;
-  color: #6884fe;
+  color: #5686ce;
   max-width: 480px;
   margin-bottom: 36px;
 }
@@ -501,7 +500,7 @@ body {
 }
 
 .feature-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(4, 13, 26, 0.58);
@@ -514,19 +513,19 @@ body {
 }
 
 .features-grid .feature-card:nth-child(1) {
-  background-image: url('multimedija/nmv.png');
+  background-image: url("multimedija/nmv.png");
 }
 
 .features-grid .feature-card:nth-child(2) {
-  background-image: url('multimedija/staza2.png');
+  background-image: url("multimedija/staza2.png");
 }
 
 .features-grid .feature-card:nth-child(3) {
-  background-image: url('multimedija/suma.png');
+  background-image: url("multimedija/suma.png");
 }
 
 .features-grid .feature-card:nth-child(4) {
-  background-image: url('multimedija/skilift2.png');
+  background-image: url("multimedija/skilift2.png");
 }
 
 .feature-stat {
@@ -743,8 +742,12 @@ body {
   position: relative;
   z-index: 10;
   background:
-    linear-gradient(180deg, rgba(4,13,26,0.72) 0%, rgba(7,21,38,0.78) 100%),
-    url('multimedija/pozadina.jpg') center center / cover no-repeat;
+    linear-gradient(
+      180deg,
+      rgba(4, 13, 26, 0.72) 0%,
+      rgba(7, 21, 38, 0.78) 100%
+    ),
+    url("multimedija/pozadina.jpg") center center / cover no-repeat;
   width: 100%;
   padding: 96px 48px 80px;
 }
@@ -826,7 +829,10 @@ body {
   align-items: center;
   justify-content: center;
   color: rgba(159, 205, 232, 0.45);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
 }
 
 .act-arrow svg {
@@ -900,7 +906,9 @@ body {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.5);
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   font-family: inherit;
 }
 
