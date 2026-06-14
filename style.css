@@ -1958,3 +1958,8 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+#aktivnosti-sajt{
+  text-decoration: none;
+  color: white;
+}
