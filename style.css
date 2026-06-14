@@ -513,19 +513,19 @@ body {
 }
 
 .features-grid .feature-card:nth-child(1) {
-  background-image: url("multimedija/nmv.png");
+  background-image: url("multimedija/nmv.webp");
 }
 
 .features-grid .feature-card:nth-child(2) {
-  background-image: url("multimedija/staza2.png");
+  background-image: url("multimedija/staza2.webp");
 }
 
 .features-grid .feature-card:nth-child(3) {
-  background-image: url("multimedija/suma.png");
+  background-image: url("multimedija/suma.webp");
 }
 
 .features-grid .feature-card:nth-child(4) {
-  background-image: url("multimedija/skilift2.png");
+  background-image: url("multimedija/skilift2.webp");
 }
 
 .feature-stat {
@@ -612,7 +612,7 @@ body {
   font-weight: 600;
   color: var(--white);
   line-height: 1.08;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
   max-width: 680px;
 }
 
@@ -747,7 +747,7 @@ body {
       rgba(4, 13, 26, 0.72) 0%,
       rgba(7, 21, 38, 0.78) 100%
     ),
-    url("multimedija/pozadina.jpg") center center / cover no-repeat;
+    url("multimedija/pozadina.webp") center center / cover no-repeat;
   width: 100%;
   padding: 96px 48px 80px;
 }
