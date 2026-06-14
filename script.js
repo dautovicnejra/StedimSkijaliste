@@ -174,7 +174,6 @@ loadWeather();
 // ── Activities modal ──────────────────────────────────────
 const ACTIVITIES = {
     skijanje: {
-        emoji: '⛷',
         title: 'Alpsko skijanje',
         sub: '6 staza · 15+ km · Svi nivoi',
         desc: 'Klasično alpsko skijanje na obroncima Hajle s 6 označenih staza za sve nivoe znanja. Zelene staze su idealne za početnike, plave i crvene za napredne skijaše, dok crna staza Crni vrh pruža pravi izazov iskusnim skijašima koji žele maksimalnu adrenalinu.',
@@ -188,7 +187,6 @@ const ACTIVITIES = {
         tags: ['Svi nivoi', 'Adrenalin', 'Ski pas']
     },
     snowboard: {
-        emoji: '🏂',
         title: 'Snowboard',
         sub: 'Terrain park · Freestyle zona',
         desc: 'Za snowboardere je pripremljen poseban terrain park s rail-ovima, kickerima i half-pipe zonom. Sve skijaške staze otvorene su i za snowboard, a strme padine Hajle idealne su za carving na svježem planinskom snijegu.',
@@ -202,8 +200,7 @@ const ACTIVITIES = {
         tags: ['Srednji–Napredni', 'Freestyle', 'Terrain park']
     },
     sanjkanje: {
-        emoji: '🛷',
-        title: 'Sanjkanje',
+        title: 'Sankanje',
         sub: '1.2 km staza · Porodično',
         desc: 'Izdvojena sanjkačka staza dužine 1.2 km savršena je za porodice s djecom. Staza prolazi kroz borovu šumu i nudi nezaboravno iskustvo zabave bez skija. Saonice su dostupne za iznajmljivanje na blagajni.',
         details: [
@@ -216,7 +213,6 @@ const ACTIVITIES = {
         tags: ['Porodično', 'Djeca', 'Zabava']
     },
     'ski-skola': {
-        emoji: '🎿',
         title: 'Ski škola',
         sub: 'Certificirani instruktori · Svi uzrasti',
         desc: 'Certificirani ski instruktori pružaju individualne i grupne lekcije za djecu i odrasle. Programi pokrivaju sve nivoe od početničkog do naprednog, a poseban "Ski Bambini" program namijenjen je najmlađima od 4 godine.',
@@ -230,7 +226,6 @@ const ACTIVITIES = {
         tags: ['Početnici', 'Djeca', 'Odrasli']
     },
     planinarenje: {
-        emoji: '🥾',
         title: 'Zimsko planinarenje',
         sub: 'Markirane rute · Vrh Hajla 2119 m',
         desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.',
@@ -244,7 +239,6 @@ const ACTIVITIES = {
         tags: ['Srednja težina', 'Panorama', 'Priroda']
     },
     nordijsko: {
-        emoji: '🌲',
         title: 'Nordijsko skijanje',
         sub: 'Cross-country · 8 km ruta',
         desc: 'Nordijske staze kroz smrčeve šume Hajle nude mirno i rekreativno skijanje daleko od gužve alpskih skijaša. Uređena 8 km petlja idealna je za aktivan odmor u prirodi i sagorijevanje kalorija na svježem planinskom zraku.',
@@ -269,7 +263,6 @@ function openActivity(key) {
     if (!a || !actModal) return;
 
     actModalCnt.innerHTML = `
-        <span class="amd-icon">${a.emoji}</span>
         <h2 class="amd-title">${a.title}</h2>
         <p class="amd-sub">${a.sub}</p>
         <p class="amd-desc">${a.desc}</p>
