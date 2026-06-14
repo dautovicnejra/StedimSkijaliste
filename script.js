@@ -171,6 +171,143 @@ async function loadWeather() {
 
 loadWeather();
 
+// ── Activities modal ──────────────────────────────────────
+const ACTIVITIES = {
+    skijanje: {
+        emoji: '⛷',
+        title: 'Alpsko skijanje',
+        sub: '6 staza · 15+ km · Svi nivoi',
+        desc: 'Klasično alpsko skijanje na obroncima Hajle s 6 označenih staza za sve nivoe znanja. Zelene staze su idealne za početnike, plave i crvene za napredne skijaše, dok crna staza Crni vrh pruža pravi izazov iskusnim skijašima koji žele maksimalnu adrenalinu.',
+        details: [
+            ['Ukupna dužina staza', '15+ km'],
+            ['Broj staza', '6 — 2 zelene, 2 plave, 1 crvena, 1 crna'],
+            ['Maks. visinska razlika', '680 m'],
+            ['Sezona', 'Decembar – April'],
+            ['Ski pas (odrasli)', 'od 25 € / dan'],
+        ],
+        tags: ['Svi nivoi', 'Adrenalin', 'Ski pas']
+    },
+    snowboard: {
+        emoji: '🏂',
+        title: 'Snowboard',
+        sub: 'Terrain park · Freestyle zona',
+        desc: 'Za snowboardere je pripremljen poseban terrain park s rail-ovima, kickerima i half-pipe zonom. Sve skijaške staze otvorene su i za snowboard, a strme padine Hajle idealne su za carving na svježem planinskom snijegu.',
+        details: [
+            ['Terrain park', 'Rail, kicker, half-pipe'],
+            ['Dozvoljeno na svim stazama', 'Da'],
+            ['Freestyle zona', 'Da'],
+            ['Ski pas (odrasli)', 'od 25 € / dan'],
+            ['Iznajmljivanje snowboarda', 'Da (pri otvaranju)'],
+        ],
+        tags: ['Srednji–Napredni', 'Freestyle', 'Terrain park']
+    },
+    sanjkanje: {
+        emoji: '🛷',
+        title: 'Sanjkanje',
+        sub: '1.2 km staza · Porodično',
+        desc: 'Izdvojena sanjkačka staza dužine 1.2 km savršena je za porodice s djecom. Staza prolazi kroz borovu šumu i nudi nezaboravno iskustvo zabave bez skija. Saonice su dostupne za iznajmljivanje na blagajni.',
+        details: [
+            ['Dužina staze', '1.2 km'],
+            ['Visinska razlika', '95 m'],
+            ['Iznajmljivanje saonica', 'Da'],
+            ['Preporučeni uzrast', '5+ godina'],
+            ['Radno vrijeme', '09:00 – 17:00'],
+        ],
+        tags: ['Porodično', 'Djeca', 'Zabava']
+    },
+    'ski-skola': {
+        emoji: '🎿',
+        title: 'Ski škola',
+        sub: 'Certificirani instruktori · Svi uzrasti',
+        desc: 'Certificirani ski instruktori pružaju individualne i grupne lekcije za djecu i odrasle. Programi pokrivaju sve nivoe od početničkog do naprednog, a poseban "Ski Bambini" program namijenjen je najmlađima od 4 godine.',
+        details: [
+            ['Grupne lekcije', '3 sata / dan'],
+            ['Individualne lekcije', 'Po dogovoru'],
+            ['Min. uzrast', '4 godine (Ski Bambini)'],
+            ['Jezici', 'Bosanski, Engleski, Njemački'],
+            ['Iznajmljivanje opreme', 'Da'],
+        ],
+        tags: ['Početnici', 'Djeca', 'Odrasli']
+    },
+    planinarenje: {
+        emoji: '🥾',
+        title: 'Zimsko planinarenje',
+        sub: 'Markirane rute · Vrh Hajla 2119 m',
+        desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.',
+        details: [
+            ['Vrh Hajla', '2119 m n.v.'],
+            ['Trajanje (ukrug)', '2.5 – 4 sata'],
+            ['Težina', 'Srednja'],
+            ['Sezona', 'Cijela godina'],
+            ['Obavezna oprema', 'Planinske cipele + štapovi'],
+        ],
+        tags: ['Srednja težina', 'Panorama', 'Priroda']
+    },
+    nordijsko: {
+        emoji: '🌲',
+        title: 'Nordijsko skijanje',
+        sub: 'Cross-country · 8 km ruta',
+        desc: 'Nordijske staze kroz smrčeve šume Hajle nude mirno i rekreativno skijanje daleko od gužve alpskih skijaša. Uređena 8 km petlja idealna je za aktivan odmor u prirodi i sagorijevanje kalorija na svježem planinskom zraku.',
+        details: [
+            ['Dužina rute', '8 km (petlja)'],
+            ['Težina', 'Laka do srednja'],
+            ['Visinska razlika', '~120 m'],
+            ['Iznajmljivanje opreme', 'Da (pri otvaranju)'],
+            ['Sezona', 'Decembar – April'],
+        ],
+        tags: ['Rekreativno', 'Priroda', 'Svi nivoi']
+    }
+};
+
+const actModal    = document.getElementById('act-modal');
+const actModalBg  = document.getElementById('act-modal-bg');
+const actModalX   = document.getElementById('act-modal-x');
+const actModalCnt = document.getElementById('act-modal-content');
+
+function openActivity(key) {
+    const a = ACTIVITIES[key];
+    if (!a || !actModal) return;
+
+    actModalCnt.innerHTML = `
+        <span class="amd-icon">${a.emoji}</span>
+        <h2 class="amd-title">${a.title}</h2>
+        <p class="amd-sub">${a.sub}</p>
+        <p class="amd-desc">${a.desc}</p>
+        <div class="amd-details">
+            ${a.details.map(([l, v]) => `
+                <div class="amd-row">
+                    <span class="amd-label">${l}</span>
+                    <span class="amd-value">${v}</span>
+                </div>`).join('')}
+        </div>
+        <div class="amd-tags">
+            ${a.tags.map(t => `<span class="amd-tag">${t}</span>`).join('')}
+        </div>`;
+
+    actModal.removeAttribute('aria-hidden');
+    actModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    actModalX && actModalX.focus();
+}
+
+function closeActivity() {
+    if (!actModal) return;
+    actModal.classList.remove('is-open');
+    actModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.act-card').forEach(card => {
+    card.addEventListener('click', () => openActivity(card.dataset.key));
+});
+
+actModalBg?.addEventListener('click', closeActivity);
+actModalX?.addEventListener('click', closeActivity);
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && actModal?.classList.contains('is-open')) closeActivity();
+});
+
 // ── Mouse parallax on mountains (homepage only) ────────────
 const mtnFar  = document.querySelector('.mtn-far');
 const mtnMid  = document.querySelector('.mtn-mid');

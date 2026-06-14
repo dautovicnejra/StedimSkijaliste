@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -22,7 +22,7 @@
           alt="Grb Rožaja"
           class="logo-icon"
         />
-        <span class="logo-text">Štedim</span>
+        <span class="logo-text">Skijalište Štedim</span>
       </a>
       <ul class="nav-links">
         <li><a href="galerija.html">Galerija</a></li>
@@ -228,6 +228,110 @@
         </div>
       </div>
     </section>
+
+    <!-- AKTIVNOSTI NA PLANINI -->
+    <section class="activities-section" id="aktivnosti">
+      <div class="section-inner">
+        <p class="eyebrow-light">Doživite Štedim</p>
+        <h2 class="section-title-light">Aktivnosti na planini</h2>
+        <p class="section-lead-light">
+          Više od skijanja — Štedim nudi raznolike zimske doživljaje za cijelu porodicu. Kliknite na aktivnost za više detalja.
+        </p>
+
+        <div class="activities-grid">
+          <button class="act-card" data-key="skijanje">
+            <div class="act-icon-wrap">⛷</div>
+            <div class="act-body">
+              <h3 class="act-name">Alpsko skijanje</h3>
+              <p class="act-sub">6 staza · 15+ km</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+
+          <button class="act-card" data-key="snowboard">
+            <div class="act-icon-wrap">🏂</div>
+            <div class="act-body">
+              <h3 class="act-name">Snowboard</h3>
+              <p class="act-sub">Terrain park · Freestyle</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+
+          <button class="act-card" data-key="sanjkanje">
+            <div class="act-icon-wrap">🛷</div>
+            <div class="act-body">
+              <h3 class="act-name">Sanjkanje</h3>
+              <p class="act-sub">1.2 km staza · Porodično</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+
+          <button class="act-card" data-key="ski-skola">
+            <div class="act-icon-wrap">🎿</div>
+            <div class="act-body">
+              <h3 class="act-name">Ski škola</h3>
+              <p class="act-sub">Instruktori · Svi uzrasti</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+
+          <button class="act-card" data-key="planinarenje">
+            <div class="act-icon-wrap">🥾</div>
+            <div class="act-body">
+              <h3 class="act-name">Zimsko planinarenje</h3>
+              <p class="act-sub">Vrh Hajla · 2119 m n.v.</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+
+          <button class="act-card" data-key="nordijsko">
+            <div class="act-icon-wrap">🌲</div>
+            <div class="act-body">
+              <h3 class="act-name">Nordijsko skijanje</h3>
+              <p class="act-sub">Cross-country · 8 km ruta</p>
+            </div>
+            <span class="act-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALNI PROZOR ZA AKTIVNOSTI -->
+    <div class="act-modal" id="act-modal" aria-hidden="true">
+      <div class="act-modal-bg" id="act-modal-bg"></div>
+      <div class="act-modal-panel">
+        <button class="act-modal-x" id="act-modal-x" aria-label="Zatvori">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        <div id="act-modal-content"></div>
+      </div>
+    </div>
 
     <!-- STAZE I SKI LIFTOVI -->
     <section class="slopes-section" id="staze">
