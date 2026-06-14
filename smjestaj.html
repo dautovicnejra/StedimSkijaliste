@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smještaj — Skijalište Štedim</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .hotels-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 56px;
+      }
+      .hotel-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow 0.25s, transform 0.25s;
+      }
+      .hotel-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-3px);
+      }
+      .hotel-card-header {
+        padding: 28px 28px 20px;
+        border-bottom: 1px solid rgba(10, 30, 60, 0.07);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .hotel-name {
+        font-family: "Archivo", sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--blue);
+        margin-bottom: 5px;
+        line-height: 1.1;
+      }
+      .hotel-stars {
+        color: #f5a623;
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+      .hotel-booking-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 18px;
+        background: var(--blue);
+        color: var(--white);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 9px;
+        text-decoration: none;
+        flex-shrink: 0;
+        transition: background 0.2s, transform 0.12s;
+        margin-top: 2px;
+      }
+      .hotel-booking-btn:hover {
+        background: var(--mid);
+        transform: scale(0.98);
+      }
+      .hotel-booking-btn svg {
+        width: 13px;
+        height: 13px;
+        opacity: 0.7;
+      }
+      .hotel-details {
+        padding: 20px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+      }
+      .hotel-detail-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 0;
+        border-bottom: 1px solid rgba(10, 30, 60, 0.055);
+      }
+      .hotel-detail-row:last-child {
+        border-bottom: none;
+      }
+      .hotel-detail-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: var(--offwhite);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--sky);
+      }
+      .hotel-detail-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+      .hotel-detail-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(10, 30, 60, 0.38);
+        margin-bottom: 1px;
+      }
+      .hotel-detail-val {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--blue);
+        line-height: 1.3;
+      }
+      .hotel-badge {
+        display: inline-block;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 100px;
+        background: rgba(37, 104, 168, 0.1);
+        color: var(--sky);
+        margin-top: 4px;
+      }
+
+      .ugost-note {
+        text-align: center;
+        font-size: 15.5px;
+        font-weight: 300;
+        color: rgba(10, 30, 60, 0.55);
+        padding-top: 40px;
+        border-top: 1px solid rgba(10, 30, 60, 0.08);
+        line-height: 1.7;
+      }
+      .ugost-note a {
+        color: var(--sky);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1.5px solid var(--sky);
+        padding-bottom: 1px;
+        transition: opacity 0.2s;
+      }
+      .ugost-note a:hover {
+        opacity: 0.7;
+      }
+
+      @media (max-width: 768px) {
+        .hotels-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="snow"></canvas>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img
+          src="multimedija/Rozaje-grb.webp"
+          alt="Grb Rožaja"
+          class="logo-icon"
+        />
+        <span class="logo-text">Skijalište Štedim</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="galerija.html">Galerija</a></li>
+        <li><a href="oprema.html">Oprema</a></li>
+        <li><a href="smjestaj.html" class="active">Smještaj</a></li>
+        <li><a href="kako-doci.html">Kako doći</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header
+      class="page-header"
+      style="
+        height: 400px;
+        background:
+          linear-gradient(to bottom, rgba(4,13,26,0.5) 0%, rgba(7,21,38,0.85) 100%),
+          url('multimedija/stedim1.webp') center / cover no-repeat;
+      "
+    >
+      <div class="page-header-content">
+        <p class="page-header-eyebrow">Planinski i gradski smještaj</p>
+        <h1 class="page-header-title">Smještaj</h1>
+      </div>
+    </header>
+
+    <!-- HOTELS SECTION -->
+    <section class="info-section">
+      <div class="info-inner">
+        <p class="info-eyebrow">Preporučeni smještaj</p>
+        <h2 class="info-title">Hoteli u blizini Štedima</h2>
+        <p class="info-lead">
+          Rožaje nudi odlične smještajne kapacitete za sve ukuse i budžete.
+          Svi navedeni hoteli organizuju shuttle prijevoz do skijališta,
+          a shuttle autobusi saobraćaju svakodnevno tokom sezone.
+        </p>
+
+        <div class="hotels-grid">
+
+          <!-- Hotel Rožaje -->
+          <div class="hotel-card">
+            <div class="hotel-card-header">
+              <div>
+                <h3 class="hotel-name">Hotel Rožaje</h3>
+                <div class="hotel-stars">★★★</div>
+              </div>
+              <a href="https://www.booking.com" target="_blank" class="hotel-booking-btn">
+                Booking.com
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Lokacija</p>
+                  <p class="hotel-detail-val">Centar, Rožaje, Crna Gora</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Udaljenost od Štedima</p>
+                  <p class="hotel-detail-val">~20 km &nbsp;·&nbsp; ~25 min vožnje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Sadržaji</p>
+                  <p class="hotel-detail-val">Restoran · Bar · Parking · WiFi</p>
+                  <span class="hotel-badge">Shuttle do skijališta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jela Natural Resort -->
+          <div class="hotel-card">
+            <div class="hotel-card-header">
+              <div>
+                <h3 class="hotel-name">Jela Natural Resort</h3>
+                <div class="hotel-stars">★★★★</div>
+              </div>
+              <a href="https://www.booking.com" target="_blank" class="hotel-booking-btn">
+                Booking.com
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Lokacija</p>
+                  <p class="hotel-detail-val">Gornji Bihor bb, Rožaje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Udaljenost od Štedima</p>
+                  <p class="hotel-detail-val">~12 km &nbsp;·&nbsp; ~15 min vožnje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Sadržaji</p>
+                  <p class="hotel-detail-val">Spa · Restoran · Prirodno okruženje</p>
+                  <span class="hotel-badge">Najbliže skijalištu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel Aldi -->
+          <div class="hotel-card">
+            <div class="hotel-card-header">
+              <div>
+                <h3 class="hotel-name">Hotel Aldi</h3>
+                <div class="hotel-stars">★★★</div>
+              </div>
+              <a href="https://www.booking.com" target="_blank" class="hotel-booking-btn">
+                Booking.com
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Lokacija</p>
+                  <p class="hotel-detail-val">Ul. 29. Novembra bb, Rožaje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Udaljenost od Štedima</p>
+                  <p class="hotel-detail-val">~19 km &nbsp;·&nbsp; ~24 min vožnje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Sadržaji</p>
+                  <p class="hotel-detail-val">Restoran · Parking · WiFi · Bar</p>
+                  <span class="hotel-badge">Shuttle do skijališta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel Wahels -->
+          <div class="hotel-card">
+            <div class="hotel-card-header">
+              <div>
+                <h3 class="hotel-name">Hotel Wahels</h3>
+                <div class="hotel-stars">★★★★</div>
+              </div>
+              <a href="https://www.booking.com" target="_blank" class="hotel-booking-btn">
+                Booking.com
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="hotel-details">
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Lokacija</p>
+                  <p class="hotel-detail-val">Centar, Rožaje, Crna Gora</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Udaljenost od Štedima</p>
+                  <p class="hotel-detail-val">~18 km &nbsp;·&nbsp; ~22 min vožnje</p>
+                </div>
+              </div>
+              <div class="hotel-detail-row">
+                <div class="hotel-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hotel-detail-label">Sadržaji</p>
+                  <p class="hotel-detail-val">Spa · Restoran · Konferencijske sale</p>
+                  <span class="hotel-badge">Shuttle do skijališta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="ugost-note">
+          Ugostiteljstvo Rožaja detaljnije možete pogledati
+          <a href="https://www.youtube.com" target="_blank">OVDJE</a>.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 Skijalište Štedim</span>
+      <span class="dot">·</span>
+      <span>Rožaje, Crna Gora</span>
+      <span class="dot">·</span>
+      <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
