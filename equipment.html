@@ -1,172 +1,66 @@
 <!doctype html>
 <html lang="bs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oprema — Skijalište Štedim</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/equipment.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .equip-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-bottom: 64px;
-      }
-      .equip-card {
-        border-radius: var(--radius);
-        overflow: hidden;
-        position: relative;
-        min-height: 240px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        background-size: cover;
-        background-position: center;
-      }
-      .equip-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(4, 13, 26, 0.88) 0%,
-          rgba(4, 13, 26, 0.22) 60%,
-          transparent 100%
-        );
-      }
-      .equip-card-body {
-        position: relative;
-        z-index: 1;
-        padding: 28px 26px;
-      }
-      .equip-icon {
-        width: 44px;
-        height: 44px;
-        object-fit: contain;
-        margin-bottom: 12px;
-        filter: brightness(1.2);
-      }
-      .equip-name {
-        font-family: "Archivo", sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--white);
-        margin-bottom: 5px;
-      }
-      .equip-sub {
-        font-size: 12px;
-        font-weight: 300;
-        color: rgba(159, 205, 232, 0.65);
-        letter-spacing: 0.06em;
-      }
 
-      .servis-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        margin-top: 48px;
-        padding-top: 48px;
-        border-top: 1px solid rgba(10, 30, 60, 0.08);
-      }
-      .servis-card {
-        background: var(--offwhite);
-        border-radius: 14px;
-        padding: 24px 22px;
-        border-left: 3px solid var(--sky);
-      }
-      .servis-price {
-        font-family: "Archivo", sans-serif;
-        font-size: 34px;
-        font-weight: 300;
-        color: var(--blue);
-        line-height: 1;
-        margin-bottom: 6px;
-      }
-      .servis-price span {
-        font-size: 16px;
-        color: rgba(10, 30, 60, 0.45);
-      }
-      .servis-name {
-        font-size: 13.5px;
-        font-weight: 500;
-        color: var(--blue);
-        margin-bottom: 4px;
-      }
-      .servis-desc {
-        font-size: 11.5px;
-        font-weight: 300;
-        color: rgba(10, 30, 60, 0.5);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oprema — Skijalište Štedim</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/equipment.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
-      @media (max-width: 960px) {
-        .equip-grid { grid-template-columns: repeat(2, 1fr); }
-        .servis-grid { grid-template-columns: repeat(2, 1fr); }
-      }
-      @media (max-width: 600px) {
-        .equip-grid { grid-template-columns: 1fr; }
-        .servis-grid { grid-template-columns: 1fr 1fr; }
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="snow"></canvas>
+</head>
 
-    <nav class="nav">
-      <a href="index.html" class="nav-logo">
-        <img
-          src="multimedia/rozaje-emblem.webp"
-          alt="Grb Rožaja"
-          class="logo-icon"
-        />
-        <span class="logo-text">Skijalište Štedim</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="gallery.html">Galerija</a></li>
-        <li><a href="equipment.html" class="active">Oprema</a></li>
-        <li><a href="accommodation.html">Smještaj</a></li>
-        <li><a href="getting-here.html">Kako doći</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-      </ul>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+<body>
+  <canvas id="snow"></canvas>
 
-    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <ul>
-        <li><a href="gallery.html">Galerija</a></li>
-        <li><a href="equipment.html">Oprema</a></li>
-        <li><a href="accommodation.html">Smještaj</a></li>
-        <li><a href="getting-here.html">Kako doći</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-      </ul>
-    </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="multimedia/rozaje-emblem.webp" alt="Grb Rožaja" class="logo-icon" />
+      <span class="logo-text">Skijalište Štedim</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="gallery.html">Galerija</a></li>
+      <li><a href="equipment.html" class="active">Oprema</a></li>
+      <li><a href="accommodation.html">Smještaj</a></li>
+      <li><a href="getting-here.html">Kako doći</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-    <!-- PAGE HEADER -->
-    <header
-      class="page-header"
-      style="
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul>
+      <li><a href="gallery.html">Galerija</a></li>
+      <li><a href="equipment.html">Oprema</a></li>
+      <li><a href="accommodation.html">Smještaj</a></li>
+      <li><a href="getting-here.html">Kako doći</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" style="
         height: 400px;
         background:
           linear-gradient(to bottom, rgba(4,13,26,0.55) 0%, rgba(7,21,38,0.82) 100%),
           url('multimedia/equipment/equipment.webp') center 30% / cover no-repeat;
-      "
-    >
-      <div class="page-header-content">
-        <p class="page-header-eyebrow">Rentanje &amp; Servis</p>
-        <h1 class="page-header-title">Skijaška oprema</h1>
-      </div>
-    </header>
+      ">
+    <div class="page-header-content">
+      <p class="page-header-eyebrow">Rentanje &amp; Servis</p>
+      <h1 class="page-header-title">Skijaška oprema</h1>
+    </div>
+  </header>
+
+  <main>
 
     <!-- EQUIPMENT CATEGORIES -->
     <section class="info-section">
@@ -182,33 +76,21 @@
         <div class="equip-grid">
           <div class="equip-card" style="background-image: url('multimedia/equipment/alpine-skis.webp');">
             <div class="equip-card-body">
-              <img
-                src="multimedia/activity-icons/alpine-skiing.webp"
-                alt="Skije"
-                class="equip-icon"
-              />
+              <img src="multimedia/activity-icons/alpine-skiing.webp" alt="Skije" class="equip-icon" />
               <h3 class="equip-name">Alpske skije</h3>
               <p class="equip-sub">Karving · All-mountain · Powder</p>
             </div>
           </div>
           <div class="equip-card" style="background-image: url('multimedia/equipment/snowboard.webp');">
             <div class="equip-card-body">
-              <img
-                src="multimedia/activity-icons/snowboard.webp"
-                alt="Snowboard"
-                class="equip-icon"
-              />
+              <img src="multimedia/activity-icons/snowboard.webp" alt="Snowboard" class="equip-icon" />
               <h3 class="equip-name">Snowboard</h3>
               <p class="equip-sub">Freestyle · Freeride · Park</p>
             </div>
           </div>
           <div class="equip-card" style="background-image: url('multimedia/equipment/nordic-skis.webp');">
             <div class="equip-card-body">
-              <img
-                src="multimedia/activity-icons/nordic-skiing.webp"
-                alt="Nordijsko"
-                class="equip-icon"
-              />
+              <img src="multimedia/activity-icons/nordic-skiing.webp" alt="Nordijsko" class="equip-icon" />
               <h3 class="equip-name">Nordijske skije</h3>
               <p class="equip-sub">Cross-country · Skitour</p>
             </div>
@@ -264,7 +146,8 @@
     </section>
 
     <!-- RENTAL PRICING -->
-    <section class="prices-section" style="background: linear-gradient(rgba(4,13,26,0.82), rgba(4,13,26,0.82)), url('multimedia/accommodation/equipment-background.webp') center / cover no-repeat;">
+    <section class="prices-section"
+      style="background: linear-gradient(rgba(4,13,26,0.82), rgba(4,13,26,0.82)), url('multimedia/accommodation/equipment-background.webp') center / cover no-repeat;">
       <div class="section-inner">
         <p class="eyebrow-light">Cijene rentanja</p>
         <h2 class="section-title-light">Iznajmljivanje opreme — po danu</h2>
@@ -278,11 +161,8 @@
           <div class="price-card price-card--featured">
             <p class="price-featured-label">Najpopularnije</p>
             <div class="price-card-head">
-              <img
-                src="multimedia/activity-icons/alpine-skiing.webp"
-                alt="Ski set"
-                style="width:24px;height:24px;object-fit:contain;opacity:0.75;flex-shrink:0;margin-top:2px;"
-              />
+              <img src="multimedia/activity-icons/alpine-skiing.webp" alt="Ski set"
+                style="width:24px;height:24px;object-fit:contain;opacity:0.75;flex-shrink:0;margin-top:2px;" />
               <div>
                 <p class="price-period">Ski set komplet</p>
                 <p class="price-desc-sm">Skije + cipele + štapovi</p>
@@ -307,11 +187,8 @@
           <!-- Snowboard set -->
           <div class="price-card">
             <div class="price-card-head">
-              <img
-                src="multimedia/activity-icons/snowboard.webp"
-                alt="Snowboard"
-                style="width:24px;height:24px;object-fit:contain;opacity:0.65;flex-shrink:0;margin-top:2px;"
-              />
+              <img src="multimedia/activity-icons/snowboard.webp" alt="Snowboard"
+                style="width:24px;height:24px;object-fit:contain;opacity:0.65;flex-shrink:0;margin-top:2px;" />
               <div>
                 <p class="price-period">Snowboard set</p>
                 <p class="price-desc-sm">Daska + cipele</p>
@@ -336,11 +213,8 @@
           <!-- Nordijski set -->
           <div class="price-card">
             <div class="price-card-head">
-              <img
-                src="multimedia/activity-icons/nordic-skiing.webp"
-                alt="Nordijsko"
-                style="width:24px;height:24px;object-fit:contain;opacity:0.65;flex-shrink:0;margin-top:2px;"
-              />
+              <img src="multimedia/activity-icons/nordic-skiing.webp" alt="Nordijsko"
+                style="width:24px;height:24px;object-fit:contain;opacity:0.65;flex-shrink:0;margin-top:2px;" />
               <div>
                 <p class="price-period">Nordijski set</p>
                 <p class="price-desc-sm">Trkačke skije + cipele + štapovi</p>
@@ -365,15 +239,10 @@
           <!-- Kacige & zaštita -->
           <div class="price-card">
             <div class="price-card-head">
-              <svg
-                class="price-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path d="M12 2C7.03 2 3 6.03 3 11v2a2 2 0 0 0 2 2h1v-4a6 6 0 0 1 12 0v4h1a2 2 0 0 0 2-2v-2c0-4.97-4.03-9-9-9Z"/>
-                <path d="M5 13v3a7 7 0 0 0 14 0v-3"/>
+              <svg class="price-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 2C7.03 2 3 6.03 3 11v2a2 2 0 0 0 2 2h1v-4a6 6 0 0 1 12 0v4h1a2 2 0 0 0 2-2v-2c0-4.97-4.03-9-9-9Z" />
+                <path d="M5 13v3a7 7 0 0 0 14 0v-3" />
               </svg>
               <div>
                 <p class="price-period">Kacige &amp; zaštita</p>
@@ -471,15 +340,17 @@
         </div>
       </div>
     </section>
+  </main>
 
-    <footer class="footer">
-      <span>© 2026 Skijalište Štedim</span>
-      <span class="dot">·</span>
-      <span>Rožaje, Crna Gora</span>
-      <span class="dot">·</span>
-      <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
-    </footer>
+  <footer class="footer">
+    <span>© 2026 Skijalište Štedim</span>
+    <span class="dot">·</span>
+    <span>Rožaje, Crna Gora</span>
+    <span class="dot">·</span>
+    <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+  </footer>
 
-    <script src="equipment.js" defer></script>
-  </body>
+  <script src="equipment.js" defer></script>
+</body>
+
 </html>
