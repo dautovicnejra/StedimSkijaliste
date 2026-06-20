@@ -1,6 +1,6 @@
 // ── Snow & stars canvas ────────────────────────────────────
 const canvas = document.getElementById('snow');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 let W, H, flakes = [], stars = [];
 
 function resize() {
@@ -57,8 +57,10 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-resize(); initStars(); initFlakes(); draw();
-window.addEventListener('resize', () => { resize(); initStars(); initFlakes(); });
+if (canvas) {
+    resize(); initStars(); initFlakes(); draw();
+    window.addEventListener('resize', () => { resize(); initStars(); initFlakes(); });
+}
 
 // ── Countdown ─────────────────────────────────────────────
 const countdownEl = document.getElementById('countdown');
@@ -113,6 +115,7 @@ document.getElementById('contact-form')?.addEventListener('submit', e => {
 
 // ── Nav: dark background on scroll ────────────────────────
 const nav = document.querySelector('.nav');
+
 window.addEventListener('scroll', () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > 60);
 }, { passive: true });
