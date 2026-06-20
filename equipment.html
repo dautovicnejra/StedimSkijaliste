@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oprema — Skijalište Štedim</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/equipment.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -133,7 +134,23 @@
         <li><a href="getting-here.html">Kako doći</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
+
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="equipment.html">Oprema</a></li>
+        <li><a href="accommodation.html">Smještaj</a></li>
+        <li><a href="getting-here.html">Kako doći</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
 
     <!-- PAGE HEADER -->
     <header
@@ -247,7 +264,7 @@
     </section>
 
     <!-- RENTAL PRICING -->
-    <section class="prices-section">
+    <section class="prices-section" style="background: linear-gradient(rgba(4,13,26,0.82), rgba(4,13,26,0.82)), url('multimedia/accommodation/equipment-background.webp') center / cover no-repeat;">
       <div class="section-inner">
         <p class="eyebrow-light">Cijene rentanja</p>
         <h2 class="section-title-light">Iznajmljivanje opreme — po danu</h2>
@@ -388,6 +405,73 @@
       </div>
     </section>
 
+    <!-- BRENDOVI I RADNO VRIJEME -->
+    <section class="brands-section">
+      <div class="section-inner">
+        <div class="brands-layout">
+
+          <div class="brands-col">
+            <p class="eyebrow-light">Oprema koju koristimo</p>
+            <h2 class="section-title-light">Brendovi</h2>
+            <div class="brand-grid">
+              <div class="brand-card">
+                <span class="brand-name">Rossignol</span>
+                <span class="brand-type">Alpske skije · Nordijske</span>
+              </div>
+              <div class="brand-card">
+                <span class="brand-name">Salomon</span>
+                <span class="brand-type">Skije · Snowboard · Cipele</span>
+              </div>
+              <div class="brand-card">
+                <span class="brand-name">Head</span>
+                <span class="brand-type">Alpske skije · Kacige</span>
+              </div>
+              <div class="brand-card">
+                <span class="brand-name">Atomic</span>
+                <span class="brand-type">Skije · Vezovi · Cipele</span>
+              </div>
+              <div class="brand-card">
+                <span class="brand-name">Fischer</span>
+                <span class="brand-type">Nordijske · Race</span>
+              </div>
+              <div class="brand-card">
+                <span class="brand-name">Burton</span>
+                <span class="brand-type">Snowboard · Zaštita</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="brands-col">
+            <p class="eyebrow-light">Servisni centar</p>
+            <h2 class="section-title-light">Radno vrijeme</h2>
+            <div class="hours-table">
+              <div class="hours-row hours-row--highlight">
+                <span class="hours-day">Ponedjeljak – Petak</span>
+                <span class="hours-time">07:30 – 18:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Subota</span>
+                <span class="hours-time">07:00 – 19:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Nedjelja</span>
+                <span class="hours-time">07:00 – 18:00</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Praznici</span>
+                <span class="hours-time">07:00 – 19:00</span>
+              </div>
+              <p class="hours-note">
+                <span>Radno samo tokom skijaške sezone (dec – mart).</span>
+                Preporučujemo dolazak ranije ujutro kako biste izbjegli gužvu.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <span>© 2026 Skijalište Štedim</span>
       <span class="dot">·</span>
@@ -396,6 +480,6 @@
       <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="equipment.js" defer></script>
   </body>
 </html>
