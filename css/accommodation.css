@@ -5,6 +5,39 @@
     url('../multimedia/forest.webp') center / cover no-repeat;
 }
 
+/* ── Navigation ───────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 48px;
+  transition:
+    background 0.35s,
+    padding 0.35s,
+    backdrop-filter 0.35s;
+}
+
+.nav--scrolled {
+  background: rgba(25, 57, 102, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 16px 48px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
 .hotels-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

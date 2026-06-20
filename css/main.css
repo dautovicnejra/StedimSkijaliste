@@ -209,13 +209,13 @@ body {
 
 /* Hero content */
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  padding: 0 40px 0 72px;
+  padding: 0 40px 0px 72px;
   width: 42%;
   animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -521,19 +521,19 @@ body {
 }
 
 .features-grid .feature-card:nth-child(1) {
-  background-image: url("multimedia/mountain-view.webp");
+  background-image: url("../multimedia/mountain-view.webp");
 }
 
 .features-grid .feature-card:nth-child(2) {
-  background-image: url("multimedia/trail-2.webp");
+  background-image: url("../multimedia/trail-2.webp");
 }
 
 .features-grid .feature-card:nth-child(3) {
-  background-image: url("multimedia/forest.webp");
+  background-image: url("../multimedia/forest.webp");
 }
 
 .features-grid .feature-card:nth-child(4) {
-  background-image: url("multimedia/ski-lift-2.webp");
+  background-image: url("../multimedia/ski-lift-2.webp");
 }
 
 .feature-stat {
@@ -755,7 +755,7 @@ body {
       rgba(4, 13, 26, 0.72) 0%,
       rgba(7, 21, 38, 0.78) 100%
     ),
-    url("multimedia/background.webp") center center / cover no-repeat;
+    url("../multimedia/background.webp") center center / cover no-repeat;
   width: 100%;
   padding: 96px 48px 80px;
 }
@@ -2051,7 +2051,7 @@ body {
   .hero-content {
     width: 100%;
     max-width: 100%;
-    padding: 270px 28px 0;
+    padding: 140px 28px 0;
   }
 
   .info-section {
