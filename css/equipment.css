@@ -105,7 +105,7 @@
 /* ── Brendovi i radno vrijeme — tamna sekcija ── */
 .brands-section {
   background: var(--offwhite);
-  padding: 80px 0;
+  padding: 80px 48px;
 }
 
 .brands-section .eyebrow-light {
@@ -215,11 +215,12 @@
   .servis-grid   { grid-template-columns: repeat(2, 1fr); }
   .brand-grid    { grid-template-columns: repeat(2, 1fr); }
   .brands-layout { grid-template-columns: 1fr; gap: 48px; }
+  .brands-section { padding: 80px 24px; }
 }
 
 @media (max-width: 600px) {
   .equip-grid  { grid-template-columns: 1fr; }
   .servis-grid { grid-template-columns: 1fr 1fr; }
   .brand-grid  { grid-template-columns: 1fr 1fr; }
-  .brands-section { padding: 56px 0; }
+  .brands-section { padding: 56px 20px; }
 }
