@@ -48,9 +48,11 @@ body {
 ::-webkit-scrollbar {
   width: 5px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--navy);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--mid);
   border-radius: 3px;
@@ -207,13 +209,13 @@ body {
 
 /* Hero content */
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  padding: 0 40px 0 72px;
+  padding: 0 40px 0px 72px;
   width: 42%;
   animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -223,10 +225,12 @@ body {
     opacity: 0;
     transform: translateY(28px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 .badge {
@@ -262,10 +266,12 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.4;
     transform: scale(0.75);
   }
+
 }
 
 .hero-title {
@@ -431,9 +437,11 @@ body {
   100% {
     transform: translateX(-50%) translateY(0);
   }
+
   50% {
     transform: translateX(-50%) translateY(7px);
   }
+
 }
 
 /* ── Homepage info section ────────────────────────────────── */
@@ -1074,6 +1082,7 @@ body {
 .slope-row:last-child {
   border-bottom: none;
 }
+
 .slope-row:hover {
   background: rgba(10, 30, 60, 0.025);
 }
@@ -1088,12 +1097,15 @@ body {
 .sd-green {
   background: #2eaa56;
 }
+
 .sd-blue {
   background: #2568a8;
 }
+
 .sd-red {
   background: #d63030;
 }
+
 .sd-black {
   background: #1a1a2e;
 }
@@ -1131,14 +1143,17 @@ body {
   background: rgba(46, 170, 86, 0.12);
   color: #1d7a3a;
 }
+
 .sb-blue {
   background: rgba(37, 104, 168, 0.12);
   color: #1a5090;
 }
+
 .sb-red {
   background: rgba(214, 48, 48, 0.12);
   color: #b02020;
 }
+
 .sb-black {
   background: rgba(26, 26, 46, 0.1);
   color: #1a1a2e;
@@ -1577,9 +1592,11 @@ body {
   display: grid;
   gap: 24px;
 }
+
 .card-grid--2 {
   grid-template-columns: 1fr 1fr;
 }
+
 .card-grid--3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -1720,6 +1737,7 @@ body {
 .btn-primary:hover {
   background: var(--mid);
 }
+
 .btn-primary:active {
   transform: scale(0.98);
 }
@@ -1883,10 +1901,12 @@ body {
 .nav-hamburger.is-open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .nav-hamburger.is-open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
+
 .nav-hamburger.is-open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -1990,26 +2010,32 @@ body {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .info-body {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
   .card-grid--2 {
     grid-template-columns: 1fr;
   }
+
   .card-grid--3 {
     grid-template-columns: 1fr 1fr;
   }
   .conditions-grid {
     grid-template-columns: 1fr;
   }
+
   .activities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .slopes-lift-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .prices-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2023,12 +2049,15 @@ body {
     padding: 18px 22px;
     z-index: 300;
   }
+
   .nav--scrolled {
     padding: 14px 22px;
   }
+
   .nav-links {
     display: none;
   }
+
   .nav-hamburger {
     display: flex;
   }
@@ -2036,26 +2065,32 @@ body {
   .hero {
     align-items: flex-start;
   }
+
   .hero-content {
     width: 100%;
     max-width: 100%;
-    padding: 270px 28px 0;
+    padding: 140px 28px 0;
   }
+
   .info-section {
     padding: 64px 24px 56px;
   }
+
   .photo-interlude {
     height: auto;
     min-height: 520px;
     padding: 80px 0;
     background-position: 65% center;
   }
+
   .photo-interlude-content {
     padding: 0 28px;
   }
+
   .photo-heading {
     font-size: clamp(34px, 8vw, 52px);
   }
+
   .conditions-section,
   .activities-section,
   .slopes-section,
@@ -2076,12 +2111,15 @@ body {
   .activities-grid {
     grid-template-columns: 1fr;
   }
+
   .act-modal-panel {
     padding: 44px 28px 36px;
   }
+
   .page-main {
     padding: 48px 24px 64px;
   }
+
   .card {
     padding: 32px 24px;
   }
@@ -2089,9 +2127,11 @@ body {
   .countdown {
     padding: 18px 20px;
   }
+
   .countdown-item {
     min-width: 52px;
   }
+
   .count-num {
     min-width: 44px;
   }
@@ -2099,13 +2139,16 @@ body {
   .form-grid {
     grid-template-columns: 1fr;
   }
+
   .features-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
+
   .feature-card {
     padding: 24px 20px;
   }
+
   .feature-num {
     font-size: 38px;
   }
@@ -2119,29 +2162,42 @@ body {
   .cond-stats {
     grid-template-columns: 1fr 1fr;
   }
+
   .prices-grid {
     grid-template-columns: 1fr;
   }
+
   .lift-details {
     flex-direction: column;
     gap: 4px;
   }
+
 }
 
 @media (max-width: 520px) {
   .card-grid--3 {
     grid-template-columns: 1fr;
   }
+
   .cond-stats {
     grid-template-columns: 1fr;
   }
+
   .prices-grid {
     grid-template-columns: 1fr;
   }
+
   .features-grid {
     grid-template-columns: 1fr;
   }
+
   .slopes-lift-grid {
     gap: 28px;
   }
+
+}
+
+#aktivnosti-sajt{
+  text-decoration: none;
+  color: white;
 }

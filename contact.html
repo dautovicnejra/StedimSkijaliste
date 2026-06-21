@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt — Skijalište Štedim</title>
+    <link rel="icon" type="image/webp" href="multimedia/rozaje-emblem.webp" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/contact.js" defer></script>
+  </head>
+  <body>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img
+          src="multimedia/rozaje-emblem.webp"
+          alt="Grb Rožaja"
+          class="logo-icon"
+        />
+        <span class="logo-text">Skijalište Štedim</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="equipment.html">Oprema</a></li>
+        <li><a href="accommodation.html">Smještaj</a></li>
+        <li><a href="contact.html" class="active">Kontakt</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="equipment.html">Oprema</a></li>
+        <li><a href="accommodation.html">Smještaj</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="page-header-content">
+        <p class="page-header-eyebrow">Stupite u kontakt sa nama</p>
+        <h1 class="page-header-title">Kontakt</h1>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="page-wrap">
+
+        <div class="card-grid card-grid--2" style="align-items: start;">
+
+          <!-- CONTACT INFO CARD -->
+          <div class="card">
+            <p class="card-eyebrow">Kontakt informacije</p>
+            <h2 class="card-title">Kako nas kontaktirati</h2>
+            <p class="card-text">
+              Tim Skijališta Štedim dostupan vam je za sva pitanja o sezoni,
+              ski pasovima, smještaju i aktivnostima. Odgovaramo u roku od 24 sata.
+            </p>
+
+            <ul class="contact-info-list" style="margin-top: 32px;">
+              <li class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Lokacija</p>
+                  <p class="contact-info-value">
+                    Štedim, Hajla<br/>
+                    84310 Rožaje, Crna Gora
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">E-mail</p>
+                  <p class="contact-info-value">
+                    <a href="mailto:info@stedim.me">info@stedim.me</a>
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Telefon</p>
+                  <p class="contact-info-value">
+                    <a href="tel:+38269000000">+382 69 000 000</a>
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Radno vrijeme (sezona)</p>
+                  <p class="contact-info-value">
+                    Svaki dan 08:00 – 17:00<br/>
+                    Decembar – April
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- SOCIAL LINKS -->
+            <div class="contact-socials">
+              <p class="contact-socials-label">Pratite nas</p>
+              <div class="contact-socials-row">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="5"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                  Instagram
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTACT FORM CARD -->
+          <div class="card">
+            <p class="card-eyebrow">Pošaljite poruku</p>
+            <h2 class="card-title">Javite nam se</h2>
+            <p class="card-text">
+              Imate pitanje o ski pasovima, opremi ili nadolazećoj sezoni?
+              Ispunite formu i odgovorićemo što je prije moguće.
+            </p>
+
+            <form id="contact-form" novalidate style="margin-top: 32px;">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="cf-name">Ime i prezime</label>
+                  <input
+                    class="form-input"
+                    id="cf-name"
+                    name="name"
+                    type="text"
+                    placeholder="Vaše ime"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cf-email">E-mail adresa</label>
+                  <input
+                    class="form-input"
+                    id="cf-email"
+                    name="email"
+                    type="email"
+                    placeholder="vas@email.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="cf-subject">Tema</label>
+                  <select class="form-input form-select" id="cf-subject" name="subject">
+                    <option value="">Odaberite temu...</option>
+                    <option value="ski-pas">Ski pasovi i cijene</option>
+                    <option value="oprema">Iznajmljivanje opreme</option>
+                    <option value="smjestaj">Smještaj</option>
+                    <option value="ski-skola">Ski škola</option>
+                    <option value="grupe">Grupni posjeti</option>
+                    <option value="ostalo">Ostalo</option>
+                  </select>
+                </div>
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="cf-message">Poruka</label>
+                  <textarea
+                    class="form-textarea"
+                    id="cf-message"
+                    name="message"
+                    placeholder="Vaša poruka..."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button type="submit" class="btn-primary" id="cf-submit">
+                  Pošalji poruku
+                </button>
+                <p class="form-note" id="cf-status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="card" style="margin-top: 24px;">
+          <p class="card-eyebrow">Česta pitanja</p>
+          <h2 class="card-title">FAQ</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">
+                <span>Kada se otvara skijalište Štedim?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Skijalište Štedim planira otvaranje u decembru 2026. Tačan datum
+                  otvaranja biće objavljen na ovoj stranici i društvenim mrežama.
+                  Pretplatite se na naš newsletter kako biste dobili obavještenje prvi.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">
+                <span>Kako mogu kupiti ski pas unaprijed?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Online prodaja ski pasova biće dostupna pri otvaranju sezone.
+                  Za sada nas kontaktirajte putem e-maila kako biste se prijavili
+                  za rani pristup i posebne popuste za prve posjetioce.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">
+                <span>Da li postoji shuttle prijevoz do skijališta?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Da, svi preporučeni hoteli u Rožajama organizuju dnevni shuttle
+                  prijevoz do skijališta i nazad. Raspored saobraćanja biće
+                  dostupan pri otvaranju sezone.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">
+                <span>Je li ski oprema dostupna za iznajmljivanje?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Na skijalištu će biti dostupan servis za iznajmljivanje skija,
+                  snowboarda, štapova i kaciga za sve uzraste. Više informacija
+                  o cijenama iznajmljivanja možete pronaći na stranici
+                  <a href="equipment.html">Oprema</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Skijalište Štedim</span>
+      <span class="dot">·</span>
+      <span>Rožaje, Crna Gora</span>
+      <span class="dot">·</span>
+      <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+    </footer>
+
+  </body>
+</html>
