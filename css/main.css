@@ -306,7 +306,7 @@ body {
   font-weight: bolder;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #165dc1;
+  color: #476ca5;
   opacity: 0.55;
   margin-bottom: 26px;
 }
@@ -315,7 +315,7 @@ body {
   font-size: clamp(13.5px, 1vw, 17.7px);
   font-weight: 550;
   line-height: 1.85;
-  color: #5686ce;
+  color: #476ca5;
   max-width: 480px;
   margin-bottom: 36px;
 }
@@ -2072,7 +2072,7 @@ body {
   .hero-content {
     width: 100%;
     max-width: 100%;
-    padding: 140px 28px 0;
+    padding: 270px 28px 0;
   }
 
   .info-section {
