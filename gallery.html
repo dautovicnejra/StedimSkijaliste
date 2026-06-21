@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerija — Skijalište Štedim</title>
+    <link rel="icon" type="image/webp" href="multimedia/rozaje-emblem.webp" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <script src="gallery.js" defer></script>
+  </head>
+  <body>
+    <canvas id="snow"></canvas>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img
+          src="multimedia/rozaje-emblem.webp"
+          alt="Grb Rožaja"
+          class="logo-icon"
+        />
+        <span class="logo-text">Skijalište Štedim</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="gallery.html" class="active">Galerija</a></li>
+        <li><a href="equipment.html">Oprema</a></li>
+        <li><a href="accommodation.html">Smještaj</a></li>
+        <li><a href="getting-here.html">Kako doći</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="gallery.html" class="active">Galerija</a></li>
+        <li><a href="equipment.html">Oprema</a></li>
+        <li><a href="accommodation.html">Smještaj</a></li>
+        <li><a href="getting-here.html">Kako doći</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <header class="page-header gallery-header">
+      <div class="page-header-content">
+        <p class="page-header-eyebrow">Štedim u slikama</p>
+        <h1 class="page-header-title">Galerija</h1>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="page-wrap">
+        <div class="card">
+          <p class="card-eyebrow">Foto galerija</p>
+          <h2 class="card-title">Pogledajte Štedim iz svih uglova</h2>
+          <p class="card-text">
+            Od skijaških staza i planinskih vrhova do infrastrukture i
+            smještaja — istražite Štedim kroz fotografije. Kliknite na
+            fotografiju za uvećani prikaz.
+          </p>
+
+          <div class="gallery-filters" id="gallery-filters">
+            <button class="gallery-filter is-active" data-filter="sve">Sve</button>
+            <button class="gallery-filter" data-filter="skijanje">Skijanje</button>
+            <button class="gallery-filter" data-filter="priroda">Priroda</button>
+            <button class="gallery-filter" data-filter="infrastruktura">Infrastruktura</button>
+            <button class="gallery-filter" data-filter="smjestaj">Smještaj</button>
+          </div>
+
+          <div class="gallery-grid" id="gallery-grid">
+            <div class="gallery-item" data-filter="skijanje" data-caption="Skijaši na Hajli">
+              <img class="gallery-photo" src="multimedia/hajla-flip.webp" alt="Skijaši na Hajli" loading="lazy" />
+              <div class="gallery-caption">Skijaši na Hajli</div>
+            </div>
+            <div class="gallery-item" data-filter="skijanje" data-caption="Spust niz padinu">
+              <img class="gallery-photo" src="multimedia/skier.webp" alt="Spust niz padinu" loading="lazy" />
+              <div class="gallery-caption">Spust niz padinu</div>
+            </div>
+            <div class="gallery-item" data-filter="skijanje" data-caption="Snowboard skok">
+              <img class="gallery-photo" src="multimedia/snowboard-jump.webp" alt="Snowboard skok" loading="lazy" />
+              <div class="gallery-caption">Snowboard skok</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Skijaška staza">
+              <img class="gallery-photo" src="multimedia/trail-1.webp" alt="Skijaška staza" loading="lazy" />
+              <div class="gallery-caption">Skijaška staza</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Pogled sa staze">
+              <img class="gallery-photo" src="multimedia/trail-2.webp" alt="Pogled sa staze" loading="lazy" />
+              <div class="gallery-caption">Pogled sa staze</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Mreža staza">
+              <img class="gallery-photo" src="multimedia/trails.webp" alt="Mreža staza" loading="lazy" />
+              <div class="gallery-caption">Mreža staza</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Pogled na Prokletije">
+              <img class="gallery-photo" src="multimedia/mountain-view.webp" alt="Pogled na Prokletije" loading="lazy" />
+              <div class="gallery-caption">Pogled na Prokletije</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Borova šuma">
+              <img class="gallery-photo" src="multimedia/forest.webp" alt="Borova šuma" loading="lazy" />
+              <div class="gallery-caption">Borova šuma</div>
+            </div>
+            <div class="gallery-item" data-filter="priroda" data-caption="Štedim u zimskom ruhu">
+              <img class="gallery-photo" src="multimedia/stedim-1.webp" alt="Štedim u zimskom ruhu" loading="lazy" />
+              <div class="gallery-caption">Štedim u zimskom ruhu</div>
+            </div>
+            <div class="gallery-item" data-filter="infrastruktura" data-caption="Ski lift">
+              <img class="gallery-photo" src="multimedia/ski-lift.webp" alt="Ski lift" loading="lazy" />
+              <div class="gallery-caption">Ski lift</div>
+            </div>
+            <div class="gallery-item" data-filter="infrastruktura" data-caption="Panoramski lift">
+              <img class="gallery-photo" src="multimedia/ski-lift-2.webp" alt="Panoramski lift" loading="lazy" />
+              <div class="gallery-caption">Panoramski lift</div>
+            </div>
+            <div class="gallery-item" data-filter="smjestaj" data-caption="Planinska kućica">
+              <img class="gallery-photo" src="multimedia/accommodation/mountain-lodge.webp" alt="Planinska kućica" loading="lazy" />
+              <div class="gallery-caption">Planinska kućica</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- LIGHTBOX ZA GALERIJU -->
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <div class="gallery-lightbox-bg" id="gallery-lightbox-bg"></div>
+
+      <button class="gallery-lightbox-x" id="gallery-lightbox-x" aria-label="Zatvori">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      <button class="gallery-lightbox-nav gallery-lightbox-prev" id="gallery-lightbox-prev" aria-label="Prethodna fotografija">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M15 6l-6 6 6 6" />
+        </svg>
+      </button>
+
+      <figure class="gallery-lightbox-figure">
+        <img id="gallery-lightbox-img" src="" alt="" />
+        <figcaption id="gallery-lightbox-caption"></figcaption>
+      </figure>
+
+      <button class="gallery-lightbox-nav gallery-lightbox-next" id="gallery-lightbox-next" aria-label="Sljedeća fotografija">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+
+    <footer class="footer">
+      <span>© 2026 Skijalište Štedim</span>
+      <span class="dot">·</span>
+      <span>Rožaje, Crna Gora</span>
+      <span class="dot">·</span>
+      <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
+    </footer>
+  </body>
+</html>
