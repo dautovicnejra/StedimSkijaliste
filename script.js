@@ -350,3 +350,101 @@ if (mtnFar) {
         mtnNear.style.transform = `translate(${rx * -24}px,${ry * -9}px)`;
     });
 }
+
+// ── Reviews ────────────────────────────────────────────────
+const SEED_REVIEWS = [
+    { name: 'Jovana K.', rating: 5, text: 'Hajla je prelijepa planina, jedva čekamo otvaranje skijališta!', date: '2026-05-12' },
+    { name: 'Amar R.', rating: 5, text: 'Bio sam na zimskom planinarenju do vrha, pogled na Prokletije je nestvaran. Sigurno se vraćam i na skijanje.', date: '2026-04-03' },
+    { name: 'Lejla H.', rating: 4, text: 'Predivna priroda i čist planinski zrak. Nadam se da će infrastruktura biti spremna na vrijeme za sezonu.', date: '2026-03-21' },
+];
+
+const reviewsGrid   = document.getElementById('reviews-grid');
+const reviewForm    = document.getElementById('review-form');
+
+if (reviewsGrid && reviewForm) {
+    const STORAGE_KEY  = 'stedim-reviews';
+    const starInput    = document.getElementById('review-star-input');
+    const starButtons  = starInput.querySelectorAll('.review-star');
+    const nameInput    = document.getElementById('review-name');
+    const textInput    = document.getElementById('review-text');
+    const submitBtn    = reviewForm.querySelector('.btn-primary');
+    let rating = 5;
+
+    function loadReviews() {
+        try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        } catch (_) {
+            return [];
+        }
+    }
+
+    function saveReview(review) {
+        const stored = loadReviews();
+        stored.unshift(review);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+    }
+
+    function formatDate(iso) {
+        return new Date(iso).toLocaleDateString('bs', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function renderStars(value) {
+        return '★★★★★☆☆☆☆☆'.slice(5 - value, 10 - value);
+    }
+
+    function setActiveStars(value) {
+        starButtons.forEach(btn => {
+            btn.classList.toggle('is-active', Number(btn.dataset.star) <= value);
+        });
+    }
+
+    function renderReviews() {
+        const all = [...loadReviews(), ...SEED_REVIEWS];
+        reviewsGrid.innerHTML = all.map(r => `
+            <div class="review-card">
+                <div class="review-card-head">
+                    <span class="review-name">${r.name}</span>
+                    <span class="review-date">${formatDate(r.date)}</span>
+                </div>
+                <div class="reviews-stars">${renderStars(r.rating)}</div>
+                <p class="review-text">${r.text}</p>
+            </div>`).join('');
+
+        const avg = all.length ? all.reduce((sum, r) => sum + r.rating, 0) / all.length : 5;
+        document.getElementById('reviews-avg').textContent = avg.toFixed(1);
+        document.getElementById('reviews-avg-stars').textContent = renderStars(Math.round(avg));
+        document.getElementById('reviews-count').textContent = `${all.length} recenzij${all.length === 1 ? 'a' : 'e'}`;
+    }
+
+    starButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            rating = Number(btn.dataset.star);
+            setActiveStars(rating);
+        });
+    });
+
+    setActiveStars(rating);
+    renderReviews();
+
+    reviewForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const text = textInput.value.trim();
+        if (!name || !text) return;
+
+        saveReview({ name, rating, text, date: new Date().toISOString() });
+        renderReviews();
+
+        reviewForm.reset();
+        rating = 5;
+        setActiveStars(rating);
+
+        const orig = submitBtn.textContent;
+        submitBtn.textContent = 'Hvala na recenziji! ✓';
+        submitBtn.style.background = '#4caf82';
+        setTimeout(() => {
+            submitBtn.textContent = orig;
+            submitBtn.style.background = '';
+        }, 3500);
+    });
+}

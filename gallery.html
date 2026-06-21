@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galerija — Skijalište Štedim</title>
     <link rel="icon" type="image/webp" href="multimedia/rozaje-emblem.webp" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +32,6 @@
         <li><a href="gallery.html" class="active">Galerija</a></li>
         <li><a href="equipment.html">Oprema</a></li>
         <li><a href="accommodation.html">Smještaj</a></li>
-        <li><a href="getting-here.html">Kako doći</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Otvori meni" aria-expanded="false">
@@ -48,7 +47,6 @@
         <li><a href="gallery.html" class="active">Galerija</a></li>
         <li><a href="equipment.html">Oprema</a></li>
         <li><a href="accommodation.html">Smještaj</a></li>
-        <li><a href="getting-here.html">Kako doći</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </div>
@@ -160,6 +158,67 @@
         </svg>
       </button>
     </div>
+
+    <!-- RECENZIJE GOSTIJU -->
+    <section class="reviews-section" id="recenzije">
+      <div class="info-inner">
+        <p class="info-eyebrow">Vaše iskustvo</p>
+        <h2 class="info-title">Recenzije gostiju</h2>
+        <p class="info-lead">
+          Posjetili ste Štedim? Ostavite nam svoj utisak sa planine — kratko
+          i jednostavno, u nekoliko riječi.
+        </p>
+
+        <div class="reviews-summary">
+          <span class="reviews-score-num" id="reviews-avg">5.0</span>
+          <div>
+            <div class="reviews-stars" id="reviews-avg-stars">★★★★★</div>
+            <p class="reviews-count" id="reviews-count">0 recenzija</p>
+          </div>
+        </div>
+
+        <div class="reviews-grid" id="reviews-grid"></div>
+
+        <div class="review-form-card">
+          <h3 class="review-form-title">Ostavite svoju recenziju</h3>
+          <form id="review-form" class="review-form">
+            <div class="form-group">
+              <label class="form-label" for="review-name">Ime</label>
+              <input
+                class="form-input"
+                type="text"
+                id="review-name"
+                placeholder="Vaše ime"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ocjena</label>
+              <div class="review-star-input" id="review-star-input">
+                <button type="button" class="review-star" data-star="1" aria-label="1 zvjezdica">★</button>
+                <button type="button" class="review-star" data-star="2" aria-label="2 zvjezdice">★</button>
+                <button type="button" class="review-star" data-star="3" aria-label="3 zvjezdice">★</button>
+                <button type="button" class="review-star" data-star="4" aria-label="4 zvjezdice">★</button>
+                <button type="button" class="review-star" data-star="5" aria-label="5 zvjezdica">★</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="review-text">Vaš komentar</label>
+              <textarea
+                class="form-textarea"
+                id="review-text"
+                placeholder="Opišite svoj utisak sa planine..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Objavi recenziju</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <span>© 2026 Skijalište Štedim</span>
