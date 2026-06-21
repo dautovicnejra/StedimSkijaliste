@@ -1,7 +1,11 @@
 /* ── Gallery page header ──────────────────────────────────── */
 .gallery-header {
   background:
-    linear-gradient(180deg, rgba(4, 13, 26, 0.55) 0%, rgba(7, 21, 38, 0.75) 100%),
+    linear-gradient(
+      180deg,
+      rgba(4, 13, 26, 0.55) 0%,
+      rgba(7, 21, 38, 0.75) 100%
+    ),
     url("../multimedia/Gallery/header.webp") center center / cover no-repeat;
 }
 
