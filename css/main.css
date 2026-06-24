@@ -285,8 +285,7 @@ body {
   font-weight: 300;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: var(--ice);
-  opacity: 0.7;
+  color: white;
   margin-bottom: 6px;
 }
 
@@ -306,8 +305,7 @@ body {
   font-weight: bolder;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #476ca5;
-  opacity: 0.85;
+  color: #2b4770;
   margin-bottom: 26px;
 }
 
@@ -315,7 +313,7 @@ body {
   font-size: clamp(13.5px, 1vw, 17.7px);
   font-weight: 550;
   line-height: 1.85;
-  color: #476ca5;
+  color: #2b4770;
   max-width: 480px;
   margin-bottom: 36px;
 }
