@@ -40,44 +40,6 @@ if (hamburger && mobileNav) {
     });
 }
 
-// ── Contact form ───────────────────────────────────────────
-const contactForm = document.getElementById('contact-form');
-const cfStatus    = document.getElementById('cf-status');
-const cfSubmit    = document.getElementById('cf-submit');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-        e.preventDefault();
-
-        const name    = contactForm.querySelector('#cf-name').value.trim();
-        const email   = contactForm.querySelector('#cf-email').value.trim();
-        const message = contactForm.querySelector('#cf-message').value.trim();
-
-        if (!name || !email || !message) {
-            cfStatus.textContent = 'Molimo popunite sva obavezna polja.';
-            cfStatus.className = 'form-note form-note--error';
-            return;
-        }
-
-        const origText = cfSubmit.textContent;
-        cfSubmit.textContent = 'Slanje...';
-        cfSubmit.disabled = true;
-
-        setTimeout(() => {
-            cfStatus.textContent = 'Poruka je uspješno poslana! Odgovorićemo vam u roku od 24 sata.';
-            cfStatus.className = 'form-note form-note--success';
-            contactForm.reset();
-            cfSubmit.textContent = origText;
-            cfSubmit.disabled = false;
-
-            setTimeout(() => {
-                cfStatus.textContent = '';
-                cfStatus.className = 'form-note';
-            }, 6000);
-        }, 900);
-    });
-}
-
 // ── FAQ accordion ──────────────────────────────────────────
 document.querySelectorAll('.faq-btn').forEach(btn => {
     btn.addEventListener('click', () => {
