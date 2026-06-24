@@ -55,48 +55,6 @@
   background: var(--white);
 }
 
-/* ── Form select ──────────────────────────────────────────── */
-.form-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230d2a4a' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 40px;
-  cursor: pointer;
-}
-
-.form-select option {
-  color: var(--blue);
-  background: var(--white);
-}
-
-/* ── Form footer ──────────────────────────────────────────── */
-.form-footer {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-
-.form-note {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(10, 30, 60, 0.45);
-  min-height: 20px;
-}
-
-.form-note--success {
-  color: #1d7a3a;
-  font-weight: 500;
-}
-
-.form-note--error {
-  color: #b02020;
-  font-weight: 500;
-}
-
 /* ── FAQ ──────────────────────────────────────────────────── */
 .faq-list {
   margin-top: 28px;
@@ -182,16 +140,6 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .form-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
-
   .faq-btn {
     padding: 16px 18px;
     font-size: 14px;

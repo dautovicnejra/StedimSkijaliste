@@ -99,20 +99,6 @@ document.getElementById('signup-form')?.addEventListener('submit', e => {
     }, 3500);
 });
 
-// ── Contact form ───────────────────────────────────────────
-document.getElementById('contact-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-primary');
-    const orig = btn.textContent;
-    btn.textContent = 'Poruka poslana ✓';
-    btn.style.background = '#4caf82';
-    e.target.reset();
-    setTimeout(() => {
-        btn.textContent = orig;
-        btn.style.background = '';
-    }, 3500);
-});
-
 // ── Nav: dark background on scroll ────────────────────────
 const nav = document.querySelector('.nav');
 
@@ -231,7 +217,7 @@ const ACTIVITIES = {
     planinarenje: {
         title: 'Zimsko planinarenje',
         sub: 'Markirane rute · Vrh Hajla 2119 m',
-        desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.<br><br>Planinarske ture možete istražiti <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="amd-link">OVDJE</a>.',
+        desc: 'Markirane zimske pješačke rute vode do vrha Hajle na 2119 metara nadmorske visine. Panoramski pogled na Prokletije i dolinu Rožaja nezaboravan je u zimskim uvjetima. Obavezna odgovarajuća planinska oprema i praćenje vremenskih uvjeta.<br><br>Planinarske ture možete istražiti <a href="https://www.guidetourrozaje.me" target="_blank" rel="noopener noreferrer" class="amd-link">OVDJE</a>.',
         details: [
             ['Vrh Hajla', '2119 m n.v.'],
             ['Trajanje (ukrug)', '2.5 – 4 sata'],
@@ -361,32 +347,9 @@ const SEED_REVIEWS = [
     { name: 'Lejla H.', rating: 4, text: 'Predivna priroda i čist planinski zrak. Nadam se da će infrastruktura biti spremna na vrijeme za sezonu.', date: '2026-03-21' },
 ];
 
-const reviewsGrid   = document.getElementById('reviews-grid');
-const reviewForm    = document.getElementById('review-form');
+const reviewsGrid = document.getElementById('reviews-grid');
 
-if (reviewsGrid && reviewForm) {
-    const STORAGE_KEY  = 'stedim-reviews';
-    const starInput    = document.getElementById('review-star-input');
-    const starButtons  = starInput.querySelectorAll('.review-star');
-    const nameInput    = document.getElementById('review-name');
-    const textInput    = document.getElementById('review-text');
-    const submitBtn    = reviewForm.querySelector('.btn-primary');
-    let rating = 5;
-
-    function loadReviews() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        } catch (_) {
-            return [];
-        }
-    }
-
-    function saveReview(review) {
-        const stored = loadReviews();
-        stored.unshift(review);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-    }
-
+if (reviewsGrid) {
     function formatDate(iso) {
         return new Date(iso).toLocaleDateString('bs', { day: 'numeric', month: 'long', year: 'numeric' });
     }
@@ -395,15 +358,8 @@ if (reviewsGrid && reviewForm) {
         return '★★★★★☆☆☆☆☆'.slice(5 - value, 10 - value);
     }
 
-    function setActiveStars(value) {
-        starButtons.forEach(btn => {
-            btn.classList.toggle('is-active', Number(btn.dataset.star) <= value);
-        });
-    }
-
     function renderReviews() {
-        const all = [...loadReviews(), ...SEED_REVIEWS];
-        reviewsGrid.innerHTML = all.map(r => `
+        reviewsGrid.innerHTML = SEED_REVIEWS.map(r => `
             <div class="review-card">
                 <div class="review-card-head">
                     <span class="review-name">${r.name}</span>
@@ -413,41 +369,11 @@ if (reviewsGrid && reviewForm) {
                 <p class="review-text">${r.text}</p>
             </div>`).join('');
 
-        const avg = all.length ? all.reduce((sum, r) => sum + r.rating, 0) / all.length : 5;
+        const avg = SEED_REVIEWS.reduce((sum, r) => sum + r.rating, 0) / SEED_REVIEWS.length;
         document.getElementById('reviews-avg').textContent = avg.toFixed(1);
         document.getElementById('reviews-avg-stars').textContent = renderStars(Math.round(avg));
-        document.getElementById('reviews-count').textContent = `${all.length} recenzij${all.length === 1 ? 'a' : 'e'}`;
+        document.getElementById('reviews-count').textContent = `${SEED_REVIEWS.length} recenzije`;
     }
 
-    starButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            rating = Number(btn.dataset.star);
-            setActiveStars(rating);
-        });
-    });
-
-    setActiveStars(rating);
     renderReviews();
-
-    reviewForm.addEventListener('submit', e => {
-        e.preventDefault();
-        const name = nameInput.value.trim();
-        const text = textInput.value.trim();
-        if (!name || !text) return;
-
-        saveReview({ name, rating, text, date: new Date().toISOString() });
-        renderReviews();
-
-        reviewForm.reset();
-        rating = 5;
-        setActiveStars(rating);
-
-        const orig = submitBtn.textContent;
-        submitBtn.textContent = 'Hvala na recenziji! ✓';
-        submitBtn.style.background = '#4caf82';
-        setTimeout(() => {
-            submitBtn.textContent = orig;
-            submitBtn.style.background = '';
-        }, 3500);
-    });
 }

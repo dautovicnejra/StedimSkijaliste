@@ -47,7 +47,7 @@
         <li><a href="gallery.html">Galerija</a></li>
         <li><a href="equipment.html">Oprema</a></li>
         <li><a href="accommodation.html">Smještaj</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="contact.html" class="active">Kontakt</a></li>
       </ul>
     </div>
 
@@ -62,10 +62,8 @@
     <main class="page-main">
       <div class="page-wrap">
 
-        <div class="card-grid card-grid--2" style="align-items: start;">
-
-          <!-- CONTACT INFO CARD -->
-          <div class="card">
+        <!-- CONTACT INFO CARD -->
+        <div class="card">
             <p class="card-eyebrow">Kontakt informacije</p>
             <h2 class="card-title">Kako nas kontaktirati</h2>
             <p class="card-text">
@@ -84,7 +82,7 @@
                 <div>
                   <p class="contact-info-label">Lokacija</p>
                   <p class="contact-info-value">
-                    Štedim, Hajla<br/>
+                    Ul. Maršala Tita BB<br/>
                     84310 Rožaje, Crna Gora
                   </p>
                 </div>
@@ -100,7 +98,7 @@
                 <div>
                   <p class="contact-info-label">E-mail</p>
                   <p class="contact-info-value">
-                    <a href="mailto:info@stedim.me">info@stedim.me</a>
+                    <a href="info@rozaje.travel">info@rozaje.travel</a>
                   </p>
                 </div>
               </li>
@@ -114,7 +112,7 @@
                 <div>
                   <p class="contact-info-label">Telefon</p>
                   <p class="contact-info-value">
-                    <a href="tel:+38269000000">+382 69 000 000</a>
+                    <a href="tel:+38251270158">+382 51 270 158</a>
                   </p>
                 </div>
               </li>
@@ -127,10 +125,9 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-info-label">Radno vrijeme (sezona)</p>
+                  <p class="contact-info-label">Radno vrijeme</p>
                   <p class="contact-info-value">
-                    Svaki dan 08:00 – 17:00<br/>
-                    Decembar – April
+                    Radnim danima 08:00 – 16:00<br/>
                   </p>
                 </div>
               </li>
@@ -140,7 +137,7 @@
             <div class="contact-socials">
               <p class="contact-socials-label">Pratite nas</p>
               <div class="contact-socials-row">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Instagram">
+                <a href="www.instagram.com/visit_rozaje" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Instagram">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                     <circle cx="12" cy="12" r="5"/>
@@ -148,7 +145,7 @@
                   </svg>
                   Instagram
                 </a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Facebook">
+                <a href="www.instagram.com/visit_rozaje" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Facebook">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                   </svg>
@@ -156,76 +153,6 @@
                 </a>
               </div>
             </div>
-          </div>
-
-          <!-- CONTACT FORM CARD -->
-          <div class="card">
-            <p class="card-eyebrow">Pošaljite poruku</p>
-            <h2 class="card-title">Javite nam se</h2>
-            <p class="card-text">
-              Imate pitanje o ski pasovima, opremi ili nadolazećoj sezoni?
-              Ispunite formu i odgovorićemo što je prije moguće.
-            </p>
-
-            <form id="contact-form" novalidate style="margin-top: 32px;">
-              <div class="form-grid">
-                <div class="form-group">
-                  <label class="form-label" for="cf-name">Ime i prezime</label>
-                  <input
-                    class="form-input"
-                    id="cf-name"
-                    name="name"
-                    type="text"
-                    placeholder="Vaše ime"
-                    required
-                    autocomplete="name"
-                  />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="cf-email">E-mail adresa</label>
-                  <input
-                    class="form-input"
-                    id="cf-email"
-                    name="email"
-                    type="email"
-                    placeholder="vas@email.com"
-                    required
-                    autocomplete="email"
-                  />
-                </div>
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="cf-subject">Tema</label>
-                  <select class="form-input form-select" id="cf-subject" name="subject">
-                    <option value="">Odaberite temu...</option>
-                    <option value="ski-pas">Ski pasovi i cijene</option>
-                    <option value="oprema">Iznajmljivanje opreme</option>
-                    <option value="smjestaj">Smještaj</option>
-                    <option value="ski-skola">Ski škola</option>
-                    <option value="grupe">Grupni posjeti</option>
-                    <option value="ostalo">Ostalo</option>
-                  </select>
-                </div>
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="cf-message">Poruka</label>
-                  <textarea
-                    class="form-textarea"
-                    id="cf-message"
-                    name="message"
-                    placeholder="Vaša poruka..."
-                    required
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="form-footer">
-                <button type="submit" class="btn-primary" id="cf-submit">
-                  Pošalji poruku
-                </button>
-                <p class="form-note" id="cf-status" aria-live="polite"></p>
-              </div>
-            </form>
-          </div>
-
         </div>
 
         <!-- FAQ SECTION -->
@@ -310,9 +237,5 @@
       <span class="dot">·</span>
       <a href="mailto:info@stedim.me" class="footer-link">info@stedim.me</a>
     </footer>
-<<<<<<< HEAD
-=======
-
->>>>>>> 172abb3acb44c43470b37db26d03cea7d15c9016
   </body>
 </html>
