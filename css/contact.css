@@ -1,0 +1,207 @@
+/* ── Page header background ───────────────────────────────── */
+.page-header {
+  height: 400px;
+  background:
+    linear-gradient(to bottom, rgba(4, 13, 26, 0.45) 0%, rgba(7, 21, 38, 0.88) 100%),
+    url('../multimedia/contact/contact_bg.webp') center / cover no-repeat;
+}
+
+/* ── Contact socials ──────────────────────────────────────── */
+.contact-socials {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(10, 30, 60, 0.08);
+}
+
+.contact-socials-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 14px;
+}
+
+.contact-socials-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1.5px solid rgba(10, 30, 60, 0.1);
+  border-radius: 9px;
+  background: var(--offwhite);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(10, 30, 60, 0.65);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.contact-social-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.contact-social-btn:hover {
+  border-color: var(--sky);
+  color: var(--sky);
+  background: var(--white);
+}
+
+/* ── Form select ──────────────────────────────────────────── */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230d2a4a' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-select option {
+  color: var(--blue);
+  background: var(--white);
+}
+
+/* ── Form footer ──────────────────────────────────────────── */
+.form-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.form-note {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(10, 30, 60, 0.45);
+  min-height: 20px;
+}
+
+.form-note--success {
+  color: #1d7a3a;
+  font-weight: 500;
+}
+
+.form-note--error {
+  color: #b02020;
+  font-weight: 500;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+.faq-list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid rgba(10, 30, 60, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(10, 30, 60, 0.07);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--blue);
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.faq-btn:hover {
+  background: rgba(10, 30, 60, 0.025);
+}
+
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--sky);
+  opacity: 0.6;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer p {
+  padding: 0 24px 22px;
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(10, 30, 60, 0.62);
+}
+
+.faq-answer a {
+  color: var(--sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.faq-answer a:hover {
+  opacity: 0.75;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .faq-btn {
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+
+  .faq-answer p {
+    padding: 0 18px 18px;
+  }
+
+  .contact-socials-row {
+    gap: 8px;
+  }
+}
