@@ -1493,7 +1493,7 @@ body {
 /* ── Inner page header ────────────────────────────────────── */
 .page-header {
   position: relative;
-  height: 340px;
+  height: 400px;
   display: flex;
   align-items: flex-end;
   justify-content: center;

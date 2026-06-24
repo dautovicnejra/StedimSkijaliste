@@ -11,17 +11,43 @@
 
 /* ── Gallery filters ──────────────────────────────────────── */
 .gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin: 28px 0 32px;
 }
 
-.gallery-filters .form-label {
-  display: block;
-  margin-bottom: 8px;
+.gallery-filter-btn {
+  padding: 9px 20px;
+  border: 1px solid rgba(10, 30, 60, 0.14);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--blue);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.12s;
 }
 
-.gallery-filter-select {
-  max-width: 260px;
-  cursor: pointer;
+.gallery-filter-btn:hover {
+  border-color: var(--sky);
+  color: var(--sky);
+}
+
+.gallery-filter-btn:active {
+  transform: translateY(1px);
+}
+
+.gallery-filter-btn.is-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.gallery-filter-btn:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
 }
 
 /* ── Gallery grid ─────────────────────────────────────────── */
@@ -221,6 +247,17 @@
 }
 
 @media (max-width: 640px) {
+  /* Filteri: centrirano i kompaktnije da se uredno prelome */
+  .gallery-filters {
+    justify-content: center;
+    gap: 8px;
+    margin: 24px 0 28px;
+  }
+  .gallery-filter-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
   .gallery-lightbox-nav {
     width: 38px;
     height: 38px;

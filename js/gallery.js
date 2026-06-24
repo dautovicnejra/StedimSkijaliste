@@ -1,12 +1,15 @@
 // ── Gallery filters ─────────────────────────────────────────
-const filterSelect = document.getElementById('gallery-filter-select');
+const filterButtons = document.querySelectorAll('.gallery-filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
-filterSelect?.addEventListener('change', () => {
-    const filter = filterSelect.value;
-    galleryItems.forEach(item => {
-        const show = filter === 'sve' || item.dataset.filter === filter;
-        item.classList.toggle('is-hidden', !show);
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterButtons.forEach(b => b.classList.toggle('is-active', b === btn));
+        galleryItems.forEach(item => {
+            const show = filter === 'sve' || item.dataset.filter === filter;
+            item.classList.toggle('is-hidden', !show);
+        });
     });
 });
 

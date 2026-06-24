@@ -71,15 +71,12 @@
             fotografiju za uvećani prikaz.
           </p>
 
-          <div class="gallery-filters">
-            <label class="form-label" for="gallery-filter-select">Filtriraj po kategoriji</label>
-            <select class="form-input form-select gallery-filter-select" id="gallery-filter-select">
-              <option value="sve">Sve</option>
-              <option value="skijanje">Skijanje</option>
-              <option value="priroda">Priroda</option>
-              <option value="infrastruktura">Infrastruktura</option>
-              <option value="smjestaj">Smještaj</option>
-            </select>
+          <div class="gallery-filters" role="group" aria-label="Filtriraj po kategoriji">
+            <button type="button" class="gallery-filter-btn is-active" data-filter="sve">Sve</button>
+            <button type="button" class="gallery-filter-btn" data-filter="skijanje">Skijanje</button>
+            <button type="button" class="gallery-filter-btn" data-filter="priroda">Priroda</button>
+            <button type="button" class="gallery-filter-btn" data-filter="infrastruktura">Infrastruktura</button>
+            <button type="button" class="gallery-filter-btn" data-filter="smjestaj">Smještaj</button>
           </div>
 
           <div class="gallery-grid" id="gallery-grid">
