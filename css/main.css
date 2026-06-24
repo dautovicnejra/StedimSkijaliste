@@ -833,7 +833,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.32);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -850,7 +850,7 @@ body {
 }
 
 .act-card:hover .act-arrow {
-  border-color: rgba(159, 205, 232, 0.4);
+  border-color: rgba(159, 205, 232, 0.6);
   color: var(--ice);
   background: rgba(37, 104, 168, 0.25);
 }
